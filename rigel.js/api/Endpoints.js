@@ -1,0 +1,18 @@
+export const SESSIONS                                  = "/auth/sessions";
+export const SESSIONS_LOGOUT                           = "/auth/sessions/logout";
+export const LOGOUT                                    = "/auth/logout";
+export const BOTS =                                      `/bots`;
+export const BOT =                            (botId) => `/bots/${botId}`;
+export const BOT_RESET =                      (botId) => `/bots/${botId}/reset`;
+export const BOT_GUILD =             (botId, guildId) => `/bots/${botId}/guilds/${guildId}`;
+export const MESSAGE_CHANNEL = (channelId, messageId) => `/channels/${channelId}/messages/${messageId}`;
+export const MESSAGES_CHANNEL =           (channelId) => `/channels/${channelId}/messages`;
+export const DISCOVERABLE_GUILDS =                       "/discoverable-guilds";
+export const GATEWAY =                                   "/gateway";
+export const GUILDS =                                    "/guilds";
+export const GUILD_DELETE =                 (guildId) => `/guilds/${guildId}/delete`;
+export const INVITE =                    (inviteCode) => `/invites/${inviteCode}`;
+export const USER_GUILD =                   (guildId) => `/users/@me/guilds/${guildId}`;
+export const USER_ME =                                   `/users/@me`;
+export const USER_PROFILE =                  (userId) => `/users/${userId}/profile`;
+export const USER_SETTINGS =                             `/users/@me/settings`;
