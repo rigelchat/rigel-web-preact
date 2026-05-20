@@ -1,0 +1,34 @@
+@font-face {
+    font-family: "gg sans";
+    font-style: normal;
+    font-weight: 400;
+    src: url("/assets/fonts/gg-sans/400.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "gg sans";
+    font-style: normal;
+    font-weight: 500;
+    src: url("/assets/fonts/gg-sans/500.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "gg sans";
+    font-style: normal;
+    font-weight: 600;
+    src: url("/assets/fonts/gg-sans/600.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "gg sans";
+    font-style: normal;
+    font-weight: 700;
+    src: url("/assets/fonts/gg-sans/700.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "gg sans";
+    font-style: normal;
+    font-weight: 800;
+    src: url("/assets/fonts/gg-sans/800.woff2") format("woff2");
+}
