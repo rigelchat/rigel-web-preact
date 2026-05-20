@@ -7,7 +7,7 @@
 
   Built with **Vite** and **Preact** for maximum performance and minimal footprint.
 
-  [![Rigel Chat](https://img.shields.io/badge/Rigel_Chat-Join_Public_Instance-3da9fc?style=for-the-badge&logo=rocket&logoColor=white)](https://app.rigel.chat/invite/rigel?instance=https%3A%2F%2Fserver.rigel.chat)
+  [![Rigel](https://img.shields.io/badge/Rigel-Join_Public_Instance-0?style=for-the-badge&logo=rocket&logoColor=white)]()
   [![License](https://img.shields.io/badge/License-AGPLv3-blue.svg?style=for-the-badge)](LICENSE)
   [![Preact](https://img.shields.io/badge/Preact-673AB8?style=for-the-badge&logo=preact&logoColor=white)](https://preactjs.com/)
   [![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
@@ -41,13 +41,13 @@ pnpm install
 
 ### 3. Configuration
 
-Create a `.env` file in the root directory:
+Copy the example environment file and configure your database and keys:
 
-```env
-VITE_API_ENDPOINT=http://localhost:3000
-VITE_CDN_ENDPOINT=http://localhost:3000
-VITE_GATEWAY_ENDPOINT=ws://localhost:3000
+```bash
+cp .env.example .env
 ```
+
+*Edit `.env` to set your `PORT` and `VITE_HOST`.*
 
 ### 4. Run Development Server
 
@@ -63,7 +63,17 @@ To create an optimized production build:
 ```bash
 npm run build
 ```
-The output will be in the `dist/` folder, ready to be served by Nginx, Apache, or Vercel.
+
+A built-in Fastify server is provided to serve your production build with optimized headers and routing:
+
+```bash
+node server.cjs
+```
+
+> [!TIP]
+> The server will use settings from `.env.production.local`. Make sure to set a `PORT`.
+
+The project can also be served by other services like Nginx, Apache, or Vercel by pointing them to the `dist/` directory.
 
 ---
 
