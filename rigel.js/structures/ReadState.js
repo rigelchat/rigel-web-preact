@@ -21,9 +21,9 @@ class ReadState extends Base {
         };
 
         if ("mention_count" in data) {
-            this.mentionCount = data.mention_count;
+            this._mentionCount = data.mention_count;
         } else {
-            this.mentionCount ??= 0;
+            this._mentionCount ??= 0;
         };
 
         return data;
@@ -31,6 +31,12 @@ class ReadState extends Base {
 
     get channel() {
         return this.client.channels.cache.get(this.id) ?? null;
+    };
+
+    get mentionCount() {
+        const channel = this.channel;
+        if (!channel || !channel.viewable) return 0;
+        return this._mentionCount;
     };
 
     get hasUnread() {

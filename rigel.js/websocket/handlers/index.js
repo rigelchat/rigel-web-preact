@@ -1,6 +1,7 @@
 import GUILD_CREATE from "./GUILD_CREATE.js";
 import GUILD_DELETE from "./GUILD_DELETE.js";
 import GUILD_MEMBER_ADD from "./GUILD_MEMBER_ADD.js";
+import GUILD_MEMBER_LIST_UPDATE from "./GUILD_MEMBER_LIST_UPDATE.js";
 import GUILD_MEMBER_REMOVE from "./GUILD_MEMBER_REMOVE.js";
 import MESSAGE_ACK from "./MESSAGE_ACK.js";
 import MESSAGE_CREATE from "./MESSAGE_CREATE.js";
@@ -9,12 +10,14 @@ import MESSAGE_UPDATE from "./MESSAGE_UPDATE.js";
 import PRESENCE_UPDATE from "./PRESENCE_UPDATE.js";
 import READY from "./READY.js";
 import RESUMED from "./RESUMED.js";
+import TYPING_START from "./TYPING_START.js";
 import USER_SETTINGS_UPDATE from "./USER_SETTINGS_UPDATE.js";
 
 export default {
     GUILD_CREATE,
     GUILD_DELETE,
     GUILD_MEMBER_ADD,
+    GUILD_MEMBER_LIST_UPDATE,
     GUILD_MEMBER_REMOVE,
     MESSAGE_ACK,
     MESSAGE_CREATE,
@@ -23,5 +26,6 @@ export default {
     PRESENCE_UPDATE,
     READY,
     RESUMED,
+    TYPING_START,
     USER_SETTINGS_UPDATE
 };

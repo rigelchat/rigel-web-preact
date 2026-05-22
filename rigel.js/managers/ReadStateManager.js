@@ -10,28 +10,16 @@ class ReadStateManager extends CachedManager {
         return this.cache.get(channelId) ?? null;
     };
 
-    getUnread() {
-        return this.cache.filter((readState) => {
-            if (!readState.hasUnread) return false;
-            const channel = readState.channel;
-            return channel && channel.viewable;
-        });
+    get unread() {
+        return this.cache.filter((readState) => readState.hasUnread);
     };
 
-    getMentioned() {
-        return this.cache.filter((readState) => {
-            if (!readState.hasMentions) return false;
-            const channel = readState.channel;
-            return channel && channel.viewable;
-        });
+    get mentioned() {
+        return this.cache.filter((readState) => readState.hasMentions);
     };
 
-    getTotalMentions() {
-        return this.cache.reduce((total, readState) => {
-            const channel = readState.channel;
-            if (!channel || !channel.viewable) return total;
-            return total + readState.mentionCount;
-        }, 0);
+    get totalMentions() {
+        return this.cache.reduce((total, readState) => total + readState.mentionCount, 0);
     };
 };
 

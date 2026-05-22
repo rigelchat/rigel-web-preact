@@ -151,7 +151,7 @@ class MessageMentions {
     toJSON() {
         return flatten(this, {
             members: true,
-            channels: true,
+            channels: true
         });
     };
 };

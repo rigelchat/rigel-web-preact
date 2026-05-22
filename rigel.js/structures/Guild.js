@@ -117,64 +117,24 @@ class Guild extends Base {
         return this.banner && this.client.cdn.banner(this.id, this.banner, options);
     };
 
-    /**
-     * Get all read states for channels in this guild
-     * @returns {Collection<string, ReadState>}
-     * @readonly
-     */
     get readStates() {
-        return this.client.readStates.cache.filter(readState => {
-            const channel = this.channels.cache.get(readState.id);
-            return channel !== undefined;
-        });
+        return this.client.readStates.cache.filter((readState) => this.channels.cache.has(readState.id));
     };
 
-    /**
-     * Whether this guild has any unread messages
-     * @type {boolean}
-     * @readonly
-     */
     get hasUnread() {
-        return this.channels.cache.some(channel => {
-            const readState = this.client.readStates.get(channel.id);
-            return readState && readState.hasUnread;
-        });
+        return this.channels.cache.some((channel) => channel?.hasUnread);
     };
 
-    /**
-     * Total number of unread mentions across all channels in this guild
-     * @type {number}
-     * @readonly
-     */
     get mentionCount() {
-        return this.channels.cache.reduce((total, channel) => {
-            const readState = this.client.readStates.get(channel.id);
-            return total + (readState ? readState.mentionCount : 0);
-        }, 0);
+        return this.channels.cache.reduce((total, channel) => total + (channel.readState?.mentionCount ?? 0), 0);
     };
 
-    /**
-     * Get all channels with unread messages in this guild
-     * @returns {Collection<string, GuildChannel>}
-     * @readonly
-     */
     get unreadChannels() {
-        return this.channels.cache.filter(channel => {
-            const readState = this.client.readStates.get(channel.id);
-            return readState && readState.hasUnread;
-        });
+        return this.channels.cache.filter((channel) => channel?.hasUnread);
     };
 
-    /**
-     * Get all channels with unread mentions in this guild
-     * @returns {Collection<string, GuildChannel>}
-     * @readonly
-     */
     get mentionedChannels() {
-        return this.channels.cache.filter(channel => {
-            const readState = this.client.readStates.get(channel.id);
-            return readState && readState.hasMentions;
-        });
+        return this.channels.cache.filter((channel) => channel?.hasMentions);
     };
 };
 
