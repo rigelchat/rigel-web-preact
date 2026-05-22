@@ -7,7 +7,7 @@
 
   Built with **Vite** and **Preact** for maximum performance and minimal footprint.
 
-  [![Rigel](https://img.shields.io/badge/Rigel-Join_Public_Instance-0?style=for-the-badge&logo=rocket&logoColor=white)]()
+  [![Rigel](https://img.shields.io/badge/Rigel-Join_Public_Instance-brightgreen?style=for-the-badge&logo=rocket&logoColor=white)]()
   [![License](https://img.shields.io/badge/License-AGPLv3-blue.svg?style=for-the-badge)](LICENSE)
   [![Preact](https://img.shields.io/badge/Preact-673AB8?style=for-the-badge&logo=preact&logoColor=white)](https://preactjs.com/)
   [![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
