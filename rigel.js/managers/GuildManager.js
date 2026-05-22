@@ -34,7 +34,7 @@ class GuildManager extends CachedManager {
                     this.client.removeListener(Events.GuildCreate, handleGuild);
                     this.client.decrementMaxListeners();
                     resolve(this.client.guilds._add(data));
-                }, 10_000);
+                }, 10000);
             })
         );
     };
@@ -42,6 +42,7 @@ class GuildManager extends CachedManager {
     async fetchDiscoverable() {
         const data = await this.client.rest.getDiscoverableGuilds();
 
+        // todo: move to a new structure
         return data.map((guild) => ({
             id: guild.id,
 			name: guild.name,

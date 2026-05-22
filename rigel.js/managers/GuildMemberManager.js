@@ -29,6 +29,14 @@ class GuildMemberManager extends CachedManager {
     get me() {
         return this.cache.get(this.client.user.id);
     };
+
+    // rename to fetchLazy or fetchMany or with ranges
+    requestLazy(channels) {
+        this.client.ws.sendPacket(14, {
+            guild_id: this.guild.id,
+            channels
+        });
+    };
 };
 
 export default GuildMemberManager;

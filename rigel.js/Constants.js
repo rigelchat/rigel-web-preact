@@ -21,7 +21,8 @@ export const GatewayOPCodes = {
     RequestGuildMembers: 8,
     InvalidSession: 9,
     Hello: 10,
-    HeartbeatACK: 11
+    HeartbeatACK: 11,
+    GuildSubscriptions: 14
 };
 
 export const GatewayCapabilityBits = {
@@ -81,6 +82,7 @@ export const Events = {
     GuildMemberAvailable: "guildMemberAvailable",
     GuildMemberRemove: "guildMemberRemove",
     GuildMembersChunk: "guildMembersChunk",
+    GuildMemberListUpdate: "guildMemberListUpdate",
     GuildMemberUpdate: "guildMemberUpdate",
     GuildRoleCreate: "roleCreate",
     GuildRoleDelete: "roleDelete",
