@@ -34,6 +34,15 @@ export default function(client, packet, shard) {
         };
     };
 
+    if (packet.d.merged_members) {
+        for (const members of packet.d.merged_members) {
+            for (const member of members) {
+                const guild = client.guilds.cache.get(member.guild_id);
+                guild.members._add(member);
+            };
+        };
+    };
+
     if (packet.d.read_state) {
         for (const readState of packet.d.read_state.entries) {
             client.readStates._add(readState);
