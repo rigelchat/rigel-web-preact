@@ -1,0 +1,15 @@
+.guild-text-channel-view {
+    position: relative;
+    display: grid;
+    grid-template-areas: "channel-header channel-header" "chat-content channel-members";
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 1fr auto;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-overlay-chat, var(--background-primary));
+}
+
+.is-mobile .guild-text-channel-view {
+    grid-template-areas: "channel-header channel-header" "chat-content-and-channel-members chat-content-and-channel-members";
+    grid-template-columns: 1fr;
+}

@@ -1,0 +1,35 @@
+.container {
+    display: flex;
+    width: fit-content;
+    padding: 4px;
+    border-radius: 4px;
+    background-color: var(--background-secondary-alt);
+}
+
+.option {
+    min-width: 60px;
+    padding: 6px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--interactive-normal);
+    border-radius: 3px;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+    transition: background-color 0.17s ease, color 0.17s ease;
+}
+
+.option:hover {
+    color: var(--interactive-hover);
+    background-color: var(--background-modifier-hover);
+}
+
+.option:active {
+    color: var(--interactive-active);
+    background-color: var(--background-modifier-active);
+}
+
+.option.selected {
+    color: var(--interactive-active);
+    background-color: var(--background-modifier-selected);
+}

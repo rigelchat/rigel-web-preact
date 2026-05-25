@@ -1,0 +1,80 @@
+.wanderingCubes {
+    position: relative;
+    width: 32px;
+    height: 32px;
+}
+
+.wanderingCubes span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    background-color: var(--brand-400);
+    animation: spinner-wandering-cubes 1.8s ease-in-out infinite;
+}
+
+.wanderingCubes span:nth-of-type(2) {
+    animation-delay: -0.9s;
+}
+
+.pulsingEllipsis {
+    width: 28px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.pulsingEllipsis span {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    margin-right: 2px;
+    background-color: var(--primary-100);
+    border-radius: 3px;
+    opacity: 0.3;
+    animation: spinner-pulsing-ellipsis 1.4s ease-in-out infinite;
+}
+
+.pulsingEllipsis span:nth-of-type(2) {
+    animation-delay: 0.2s;
+}
+
+.pulsingEllipsis span:nth-of-type(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes spinner-wandering-cubes {
+    25% {
+        transform: translateX(22px) rotate(-90deg) scale(0.5);
+    }
+
+    50%  {
+        transform: translateX(22px) translateY(22px) rotate(-180deg);
+    }
+
+    75% {
+        transform: translateX(0) translateY(22px) rotate(-270deg) scale(0.5);
+    }
+
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+@keyframes spinner-pulsing-ellipsis {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.3;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

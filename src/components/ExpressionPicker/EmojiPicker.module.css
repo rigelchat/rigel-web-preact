@@ -1,0 +1,123 @@
+.pickerContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 0;
+}
+
+.header {
+    padding: 0 16px 12px 16px;
+    box-shadow: var(--elevation-low);
+    z-index: 2;
+}
+
+.categoryList {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 8px;
+    width: 48px;
+    height: 100%;
+    background-color: var(--background-tertiary);
+}
+
+.categoryList .categoryItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    color: var(--interactive-normal);
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: background-color 0.1s ease-in-out;
+}
+
+.categoryList .categoryItem:hover {
+    color: var(--interactive-hover);
+    background-color: var(--background-modifier-hover);
+}
+
+.categoryList .categoryItem.active {
+    color: var(--interactive-active);
+    background-color: var(--background-primary);
+}
+
+.categoryList .categoryItem .icon {
+    width: 24px;
+    height: 24px;
+}
+
+
+
+.emojiContainer {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    min-height: 0;
+    flex: 1;
+}
+
+.emojiGrid {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    min-height: 0;
+}
+
+.categorySection {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.emojiGrid .categoryHeader {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 32px;
+    padding: 0 4px 0 12px;
+    color: var(--header-secondary);
+    background-color: var(--background-secondary);
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.emojiGrid .categoryHeader .icon {
+    width: 16px;
+    height: 16px;
+}
+
+.categoryEmojis {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+    gap: 4px;
+}
+
+.emojiItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border: none;
+    background: transparent;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.emojiItem:hover {
+    background-color: var(--background-accent);
+}
+
+.emojiItem .emoji {
+    width: 40px;
+    height: 40px;
+}

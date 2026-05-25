@@ -1,0 +1,86 @@
+.sidebar-wrapper .sidebar .sidebar-scroller .scroller-content .item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-top: 16px;
+    color: var(--channels-default);
+}
+
+.sidebar-wrapper .sidebar .sidebar-scroller .scroller-content .item:not(.category) .icon {
+    display: block;
+    flex: 0 0 auto;
+    width: 20px;
+    height: 20px;
+    margin-right: 6px;
+}
+
+.sidebar-wrapper .sidebar .sidebar-scroller .scroller-content .item .name {
+    flex: 1 1 auto;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.sidebar-wrapper .sidebar .sidebar-scroller .scroller-content .item:not(.category) {
+    margin: 1px 0 1px 8px;
+    padding: 6px 8px;
+    border-radius: 4px;
+}
+
+.sidebar-wrapper .sidebar .sidebar-scroller .scroller-content .item:not(.category):hover {
+    background: var(--bg-overlay-hover, var(--background-modifier-hover));
+}
+
+.sidebar-wrapper .sidebar .sidebar-scroller .scroller-content .item:not(.category):active,
+.sidebar-wrapper .sidebar .sidebar-scroller .scroller-content .item:not(.category).selected {
+    background: var(--bg-overlay-active, var(--background-modifier-active));
+}
+
+.sidebar-wrapper .sidebar .sidebar-scroller .scroller-content .item:not(.category) .name {
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 500;
+}
+
+.sidebar-wrapper .sidebar .sidebar-scroller .scroller-content .item:not(.category):hover .name,
+.sidebar-wrapper .sidebar .sidebar-scroller .scroller-content .item:not(.category):active .name {
+    color: var(--interactive-hover);
+}
+
+.sidebar-wrapper .sidebar .sidebar-scroller .scroller-content .item:not(.category).selected .name {
+    color: var(--interactive-active);
+}
+
+.sidebar-wrapper .sidebar .sidebar-scroller .scroller-content .item.category {
+    height: 24px;
+    padding-right: 8px;
+    padding-left: 16px;
+}
+
+.sidebar-wrapper .sidebar .sidebar-scroller .scroller-content .item .icon-caret {
+    position: absolute;
+    display: block;
+    left: 2px;
+    top: 6px;
+    width: 12px;
+    height: 12px;
+    flex: 0 0 auto;
+    margin-right: 6px;
+}
+
+.sidebar-wrapper .sidebar .sidebar-scroller .scroller-content .item.category.collapsed .icon-caret {
+    transform: rotate(-90deg);
+}
+
+.sidebar-wrapper .sidebar .sidebar-scroller .scroller-content .item.category .name {
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.sidebar-wrapper .sidebar .sidebar-scroller .scroller-content .item.category:hover {
+    color: var(--interaction-hover);
+}

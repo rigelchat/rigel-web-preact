@@ -1,0 +1,71 @@
+.languages {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.languages .item {
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
+    align-items: center;
+    gap: 8px;
+    padding: 12px;
+    color: var(--interactive-normal);
+    background-color: var(--background-secondary);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.languages .item:hover {
+    color: var(--interactive-hover);
+    background-color: var(--background-modifier-hover);
+}
+
+.languages .item:active {
+    color: var(--interactive-active);
+    background-color: var(--background-modifier-active);
+}
+
+.languages .item.selected {
+    color: var(--interactive-active);
+    background-color: var(--background-modifier-selected);
+}
+
+.languages .item .localeName {
+    font-size: 16px;
+    line-height: 1.25;
+    font-weight: 500;
+}
+
+.languages .item .localizedName {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+}
+
+.languages .item .emoji {
+    width: 28px;
+}
+
+.languages .item input[type="radio"] {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    appearance: none;
+    color: inherit;
+    border: 2px solid currentColor;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.languages .item input[type="radio"]:checked::after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-color: currentColor;
+    border-radius: 50%;
+}

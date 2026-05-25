@@ -1,0 +1,11 @@
+.sidebar-wrapper .sidebar .sidebar-scroller {
+    flex: 1 1 auto;
+    user-select: none;
+    overflow: hidden scroll;
+    z-index: 3;
+}
+
+.sidebar-wrapper .sidebar .sidebar-scroller .scroller-content {
+    padding-right: 8px;
+    padding-bottom: 16px;
+}

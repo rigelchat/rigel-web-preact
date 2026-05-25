@@ -1,0 +1,138 @@
+.panel {
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+    height: 53px;
+    padding: 0 8px 1px;
+    z-index: 2;
+}
+
+:global(.theme-dark) .panel {
+    background: var(--bg-overlay-1, var(--background-secondary-alt));
+}
+
+:global(.theme-light) .panel {
+    background: var(--bg-overlay-3, var(--background-secondary-alt));
+}
+
+.avatarWrapper {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    margin-left: -2px;
+    margin-right: 8px;
+    padding-left: 2px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.avatarWrapper:hover {
+    color: var(--interactive-hover);
+    background-color: var(--background-modifier-selected);
+}
+
+.avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+.namesContainer {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 4px 0 4px 8px;
+    margin-right: 8px;
+    min-width: 0;
+    user-select: text;
+}
+
+.username {
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 600;
+    color: var(--header-primary);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.hoverRoll {
+    position: relative;
+    font-size: 12px;
+    line-height: 13px;
+    color: var(--header-secondary);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.default,
+.hovered {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    transform-style: preserve-3d;
+    transition: all 0.2s ease;
+}
+
+.hovered {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    transform: translate3d(0, 107%, 0);
+}
+
+.panel:hover .default {
+    transform: translate3d(0, -107%, 0);
+    opacity: 0;
+}
+
+.panel:hover .hovered {
+    transform: translatez(0);
+    opacity: 1;
+}
+
+.default .emoji {
+    width: 14px;
+    height: 14px;
+    margin-right: 4px;
+}
+
+.btnUserSettings {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    margin-left: auto;
+    color: var(--interactive-normal);
+}
+
+.btnUserSettings:hover {
+    color: var(--interactive-hover);
+    background-color: var(--background-modifier-selected);
+}
+
+.btnUserSettings svg {
+    width: 20px;
+    height: 20px;
+}
+
+.btnUserSettings:hover svg {
+    animation: gear-spin 1.2s cubic-bezier(0.5, 0.1, 0, 1);
+}
+
+@keyframes gear-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(180deg); }
+}

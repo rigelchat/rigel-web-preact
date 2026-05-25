@@ -1,0 +1,38 @@
+.embedContainer {
+    margin-top: 0.25rem;
+    max-width: 400px;
+}
+
+.embedContent {
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.embedImage {
+    max-width: 100%;
+    height: auto;
+    max-height: 350px;
+    object-fit: contain;
+    border-radius: 4px;
+    display: block;
+}
+
+.embedLoader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100px;
+    color: var(--text-muted);
+    font-size: 0.875rem;
+}
+
+.errorLink {
+    color: var(--text-link);
+    text-decoration: none;
+    word-break: break-all;
+}
+
+.errorLink:hover {
+    text-decoration: underline;
+}

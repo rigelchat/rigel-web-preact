@@ -1,0 +1,290 @@
+.guild-text-channel-view .chat-content .chat-form {
+    position: relative;
+}
+
+.guild-text-channel-view .chat-content .chat-form {
+    padding: 0 16px;
+}
+
+.is-mobile .guild-text-channel-view .chat-content .chat-form {
+    padding: 0;
+    margin-top: 0;
+}
+
+.guild-text-channel-view .chat-content .chat-text-area {
+    display: flex;
+    margin-bottom: 24px;
+    max-height: 50vh;
+    border-radius: 8px;
+    background: var(--bg-overlay-3, var(--channeltextarea-background));
+    overflow: hidden scroll;
+}
+
+.guild-text-channel-view .chat-content .chat-text-area.disabled {
+    opacity: 0.5;
+}
+
+.is-mobile .guild-text-channel-view .chat-content .chat-text-area {
+    align-items: center;
+    gap: 7px;
+    margin-bottom: 0;
+    padding: 7px 12px;
+    border-radius: 0;
+}
+
+.guild-text-channel-view .chat-content .chat-text-area::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+.is-mobile .guild-text-channel-view .chat-content .chat-text-area::-webkit-scrollbar {
+    display: none;
+}
+
+.guild-text-channel-view .chat-content .chat-text-area::-webkit-scrollbar-track {
+    background-clip: padding-box;
+    border: 4px solid transparent;
+}
+
+.guild-text-channel-view .chat-content .chat-text-area::-webkit-scrollbar-thumb {
+    background-clip: padding-box;
+    border: 4px solid transparent;
+    background-color: hsl(var(--primary-800-hsl) / 0.6);
+    border-radius: 8px;
+}
+
+.guild-text-channel-view .chat-content .chat-text-area .attach-btn {
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 44px;
+    padding: 10px 16px;
+    border: none;
+    background: none;
+    color: var(--interactive-normal);
+    cursor: pointer;
+}
+
+.is-mobile .guild-text-channel-view .chat-content .chat-text-area .attach-btn {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border-radius: 20px;
+}
+
+.guild-text-channel-view .chat-content .chat-text-area .attach-btn:hover {
+    color: var(--interactive-hover);
+}
+
+.guild-text-channel-view .chat-content .chat-text-area .attach-btn svg {
+    width: 24px;
+    height: 24px;
+}
+
+.is-mobile .guild-text-channel-view .chat-content .chat-text-area .attach-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+.guild-text-channel-view .chat-content .chat-text-area .buttons button {
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 4px;
+    margin-left: 4px;
+    margin-right: 4px;
+    color: var(--interactive-normal);
+}
+
+.guild-text-channel-view .chat-content .chat-text-area .buttons button:hover {
+    color: var(--interactive-hover);
+}
+
+.guild-text-channel-view .chat-content .chat-text-area .buttons button:active {
+    color: var(--interactive-active);
+}
+
+.guild-text-channel-view .chat-content .chat-text-area .buttons button [fill][fill-opacity] {
+    fill: currentColor;
+}
+
+.guild-text-channel-view .chat-content .chat-text-area .buttons button .icon {
+    width: 24px;
+    height: 24px;
+}
+
+.guild-text-channel-view .chat-content .chat-text-area .sticker-btn svg,
+.guild-text-channel-view .chat-content .chat-text-area .gif-btn svg {
+    transform-origin: 50% 100%;
+}
+
+.guild-text-channel-view .chat-content .chat-text-area .sticker-btn:hover svg,
+.guild-text-channel-view .chat-content .chat-text-area .gif-btn:hover svg {
+    animation: lottie-icon-wiggle 0.7s ease-in-out;
+}
+
+.guild-text-channel-view .chat-content .chat-text-area .emoji-btn {
+    filter: grayscale(1);
+    transition: filter 0.1s ease-out;
+}
+
+.guild-text-channel-view .chat-content .chat-text-area .emoji-btn:hover {
+    filter: none;
+}
+
+.guild-text-channel-view .chat-content .chat-text-area .emoji-btn .emoji {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    font-size: 24px;
+    line-height: 1;
+    transition: transform 0.1s ease-out;
+}
+
+.guild-text-channel-view .chat-content .chat-text-area .emoji-btn:hover .emoji {
+    transform: scale(1.14);
+}
+
+.guild-text-channel-view .chat-content .chat-text-area .buttons {
+    position: sticky;
+    display: flex;
+    flex-direction: row;
+    height: 44px;
+    top: 0;
+    margin-right: 6px;
+}
+
+.has-webkit-scrollbar .guild-text-channel-view .chat-content .chat-text-area .buttons {
+    margin-right: -6px;
+}
+
+.guild-text-channel-view .chat-content .chat-text-area .send-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    margin-left: 12px;
+    margin-right: 4px;
+    outline: none;
+    border: none;
+    background: none;
+    color: var(--text-brand);
+    transition: all 0.15s ease-in;
+}
+
+.is-mobile .guild-text-channel-view .chat-content .chat-text-area .send-btn {
+    width: 40px;
+    height: 40px;
+    margin-left: 0;
+    margin-right: 0;
+    border-radius: 20px;
+    color: var(--white);
+    background-color: var(--brand-500);
+}
+
+.guild-text-channel-view .chat-content .chat-text-area .send-btn:not([disabled]):hover {
+    color: var(--interactive-active);
+}
+
+.guild-text-channel-view .chat-content .chat-text-area .send-btn:not([disabled]):active {
+    color: var(--brand-500);
+}
+
+.is-mobile .guild-text-channel-view .chat-content .chat-text-area .send-btn:not([disabled]):hover {
+    color: var(--white);
+    background-color: var(--brand-400);
+}
+
+.guild-text-channel-view .chat-content .chat-text-area .send-btn[disabled] {
+    color: var(--interactive-muted);
+    pointer-events: none;
+}
+
+.guild-text-channel-view .chat-content .chat-text-area .send-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+.guild-text-channel-view .chat-content .chat-text-area .separator {
+    width: 1px;
+    height: 28px;
+    margin-left: 8px;
+    align-self: center;
+    background-color: var(--background-modifier-accent);
+}
+
+.is-mobile .guild-text-channel-view .chat-content .chat-text-area .separator {
+    display: none;
+}
+
+.guild-text-channel-view .chat-content .chat-text-area textarea {
+    font-family: inherit;
+    font-size: 16px;
+    line-height: 22px;
+    flex: 1;
+    min-height: 44px;
+    padding: 11px 10px 11px 0;
+    background: none;
+    resize: none;
+    border: none;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    color: var(--text-normal);
+}
+
+.guild-text-channel-view .chat-content .chat-text-area.sansAttachBtn textarea {
+    padding-left: 15px;
+}
+
+.theme-light .guild-text-channel-view .chat-content .chat-text-area textarea {
+    font-weight: 500;
+}
+
+.is-mobile .guild-text-channel-view .chat-content .chat-text-area textarea {
+    min-height: 40px;
+    padding: 9px 13px;
+    border-radius: 20px;
+}
+
+.guild-text-channel-view .chat-content .chat-text-area textarea::-webkit-input-placeholder {
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.guild-text-channel-view .chat-content .chat-text-area textarea::-moz-placeholder {
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.is-mobile.theme-dark .guild-text-channel-view .chat-content .chat-text-area .attach-btn,
+.is-mobile.theme-dark .guild-text-channel-view .chat-content .chat-text-area .send-btn[disabled],
+.is-mobile.theme-dark .guild-text-channel-view .chat-content .chat-text-area textarea {
+    background-color: rgba(255, 255, 255, 0.07);
+}
+
+.is-mobile.theme-light .guild-text-channel-view .chat-content .chat-text-area .attach-btn,
+.is-mobile.theme-light .guild-text-channel-view .chat-content .chat-text-area .send-btn[disabled],
+.is-mobile.theme-light .guild-text-channel-view .chat-content .chat-text-area textarea {
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+@keyframes lottie-icon-wiggle {
+    0%   { transform: rotate(0deg); }
+    20%  { transform: rotate(5deg); }
+    40%  { transform: rotate(5deg); }
+    60%  { transform: rotate(-5deg); }
+    80%  { transform: rotate(-5deg); }
+    100% { transform: rotate(0deg); }
+}

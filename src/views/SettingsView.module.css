@@ -1,0 +1,358 @@
+.container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    background-color: var(--background-primary);
+}
+
+.sidebarRegion {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    flex: 1 0 220px;
+    background: var(--background-secondary);
+    overflow-y: scroll;
+}
+
+.sidebarRegion .sidebar {
+    width: 220px;
+    padding: 60px 6px 60px 20px;
+}
+
+.sidebarRegion .sidebar .header {
+    font-size: 12px;
+    line-height: 1.3;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--channels-default);
+    padding: 6px 10px;
+}
+
+.sidebarRegion .sidebar .item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    color: var(--interactive-normal);
+    margin-bottom: 2px;
+    padding: 6px 10px;
+    border-radius: 4px;
+}
+
+.sidebarRegion .sidebar .item:hover {
+    color: var(--interactive-hover);
+    background-color: var(--background-modifier-hover);
+}
+
+.sidebarRegion .sidebar .item:active {
+    color: var(--interactive-active);
+    background-color: var(--background-modifier-active);
+}
+
+.sidebarRegion .sidebar .item.selected {
+    color: var(--interactive-active);
+    background-color: var(--background-modifier-selected);
+}
+
+.sidebarRegion .sidebar .item .icon {
+    width: 16px;
+    height: 16px;
+}
+
+.sidebarRegion .sidebar .separator {
+    height: 1px;
+    margin: 8px 10px;
+    background-color: var(--background-modifier-accent);
+}
+
+.sidebarRegion .sidebar .info {
+    padding: 8px 10px;
+    user-select: none;
+}
+
+.sidebarRegion .sidebar .info span {
+    font-size: 12px;
+    line-height: 1.3;
+    font-weight: 400;
+    color: var(--text-muted);
+}
+
+.contentRegion {
+    display: flex;
+    align-items: flex-start;
+    flex: 1 1 800px;
+    overflow-y: scroll;
+}
+
+.contentRegion .content {
+    max-width: 740px;
+    min-width: 460px;
+    min-height: 100%;
+    flex: 1 1 auto;
+    padding: 60px 40px 80px;
+}
+
+.contentRegion .toolsContainer {
+    flex: 0 0 36px;
+    margin-right: 35px;
+    padding-top: 60px;
+}
+
+.contentRegion .toolsContainer .closeContainer {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.contentRegion .toolsContainer .closeContainer .closeBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: 2px solid var(--interactive-normal);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.contentRegion .toolsContainer .closeContainer .closeBtn:hover {
+    color: var(--interactive-hover);
+    background-color: var(--background-modifier-hover);
+}
+
+.contentRegion .toolsContainer .closeContainer .closeBtn:active {
+    color: var(--interactive-active);
+    background-color: var(--background-modifier-active);
+    transform: translatey(1px);
+}
+
+.contentRegion .toolsContainer .closeContainer .closeBtn .icon {
+    width: 18px;
+    height: 18px;
+}
+
+.contentRegion .toolsContainer .closeContainer .keybind {
+    font-weight: 600;
+    font-size: 13px;
+    margin-top: 8px;
+    color: var(--interactive-normal);
+}
+
+.contentRegion .toolsContainer .closeContainer .closeBtn:hover + .keybind {
+    color: var(--interactive-hover);
+}
+
+.contentRegion .toolsContainer .closeContainer .closeBtn:active + .keybind {
+    color: var(--interactive-active);
+}
+
+.contentRegion .tabTitle {
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--header-primary);
+}
+
+.contentRegion .section {
+    margin-bottom: 24px;
+}
+
+.contentRegion .sectionTitle {
+    font-size: 12px;
+    line-height: 1.3;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    margin-bottom: 8px;
+    color: var(--header-secondary);
+}
+
+.contentRegion .sectionDivider {
+    width: 100%;
+    height: 1px;
+    margin-top: 20px;
+    border-top: thin solid var(--background-modifier-accent);
+}
+
+/* Mobile styles */
+.mobileHeader {
+    display: none;
+}
+
+.mobileHeaderSidebar {
+    display: none;
+}
+
+.slideWrapper {
+    display: none;
+}
+
+.sidebarContent {
+    display: none;
+}
+
+.contentWrapper {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    /* Slide Wrappers */
+    .slideWrapper {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    /* Mobile Headers */
+    .mobileHeader,
+    .mobileHeaderSidebar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 16px;
+        background: var(--background-secondary);
+        border-bottom: 1px solid var(--background-modifier-accent);
+        flex-shrink: 0;
+    }
+
+    .mobileHeader .mobileTitle,
+    .mobileHeaderSidebar .mobileTitle {
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--header-primary);
+    }
+
+    .mobileHeader .menuButton,
+    .mobileHeader .closeButton,
+    .mobileHeaderSidebar .closeButton {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: var(--interactive-normal);
+        border-radius: 4px;
+        padding: 0;
+    }
+
+    .mobileHeader .menuButton:hover,
+    .mobileHeader .closeButton:hover,
+    .mobileHeaderSidebar .closeButton:hover {
+        color: var(--interactive-hover);
+        background-color: var(--background-modifier-hover);
+    }
+
+    .mobileHeader .menuButton:active,
+    .mobileHeader .closeButton:active,
+    .mobileHeaderSidebar .closeButton:active {
+        color: var(--interactive-active);
+        background-color: var(--background-modifier-active);
+    }
+
+    .mobileHeader .icon,
+    .mobileHeaderSidebar .icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    /* Sidebar Content */
+    .sidebarContent {
+        display: block;
+        flex: 1;
+        overflow-y: auto;
+        padding: 16px;
+        background: var(--background-secondary);
+    }
+
+    .sidebarContent .header {
+        font-size: 12px;
+        line-height: 1.3;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        color: var(--channels-default);
+        padding: 6px 10px;
+    }
+
+    .sidebarContent .item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 16px;
+        line-height: 20px;
+        font-weight: 500;
+        cursor: pointer;
+        color: var(--interactive-normal);
+        margin-bottom: 2px;
+        padding: 10px;
+        border-radius: 4px;
+    }
+
+    .sidebarContent .item:hover {
+        color: var(--interactive-hover);
+        background-color: var(--background-modifier-hover);
+    }
+
+    .sidebarContent .item:active {
+        color: var(--interactive-active);
+        background-color: var(--background-modifier-active);
+    }
+
+    .sidebarContent .item .icon {
+        width: 16px;
+        height: 16px;
+    }
+
+    .sidebarContent .separator {
+        height: 1px;
+        margin: 8px 10px;
+        background-color: var(--background-modifier-accent);
+    }
+
+    .sidebarContent .info {
+        padding: 8px 10px;
+        user-select: none;
+    }
+
+    .sidebarContent .info span {
+        font-size: 12px;
+        line-height: 1.3;
+        font-weight: 400;
+        color: var(--text-muted);
+    }
+
+    /* Content Wrapper */
+    .contentWrapper {
+        display: block;
+        flex: 1;
+        overflow-y: auto;
+        padding: 16px;
+        background: var(--background-primary);
+    }
+
+    /* Hide desktop layout on mobile */
+    .sidebarRegion,
+    .contentRegion {
+        display: none;
+    }
+}

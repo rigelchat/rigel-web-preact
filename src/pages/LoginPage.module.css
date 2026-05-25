@@ -1,0 +1,142 @@
+.artwork {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	pointer-events: none;
+}
+
+.logoWithText {
+	position: fixed;
+	top: 48px;
+	left: 48px;
+	width: 124px;
+	height: 24px;
+}
+
+.wrapper {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.authBox {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	width: 478px;
+	border-radius: 5px;
+	background: var(--primary-600);
+	box-shadow: var(--legacy-elevation-high);
+}
+
+.logo {
+	display: none;
+	width: 130px;
+	height: 36px;
+	margin-top: 20px;
+	margin-bottom: 16px;
+}
+
+.authBox h1 {
+	font-size: 24px;
+	line-height: 1.25;
+	font-weight: 600;
+	text-align: center;
+	color: var(--primary-130);
+	margin-bottom: 8px;
+}
+
+.authBox p {
+	font-size: 16px;
+	line-height: 1.25;
+	font-weight: 400;
+	color: var(--primary-330);
+}
+
+.slideContent {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+@media (max-width: 485px) {
+	.authBox {
+		width: 100%;
+		height: 100%;
+		border-radius: 0;
+	}
+
+	.authBox p {
+		display: none;
+	}
+
+
+	.logo {
+		display: block;
+	}
+}
+
+.authBox .form {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	margin-top: 20px;
+}
+
+.authBox .form .label {
+    font-size: 12px;
+    line-height: 16px;
+	font-weight: 700;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+	margin-bottom: 8px;
+	color: var(--header-secondary);
+}
+
+.authBox .form .label.error {
+	color: var(--status-danger);
+}
+
+.authBox .form .label .required {
+    padding-left: 4px;
+	color: var(--status-danger);
+}
+
+.authBox .form .label .errorMessage {
+    font-style: italic;
+}
+
+.authBox .socials {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	width: 100%;
+	margin-top: 20px;
+    padding: 0 16px;
+}
+
+.authBox .socials a {
+	flex: 1;
+}
+
+.authBox .instanceInfo {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	margin-left: auto;
+}
+
+.authBox .instanceInfo .image {
+	width: 24px;
+	height: 24px;
+	border-radius: 50%;
+}

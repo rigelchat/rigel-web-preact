@@ -1,0 +1,118 @@
+.guild-discovery-view {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-overlay-chat, var(--background-primary));
+    overflow-y: scroll;
+}
+
+.guild-discovery-view .hero {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 288px;
+}
+
+.is-mobile .guild-discovery-view .hero {
+    min-height: 238px;
+}
+
+.theme-dark .guild-discovery-view .hero {
+    background: radial-gradient(
+        130.66% 324.98% at -3.95% 0,
+        #2f72c1 0,
+        rgba(37, 34, 154, 0.8) 35.73%,
+        rgba(25,23,92,0) 100%
+    ), #000;
+}
+
+.theme-light .guild-discovery-view .hero {
+    background: radial-gradient(
+        122.23% 351.84% at -4.04% 0,
+        #eff8ff 0,
+        #d7dcff 30.28%,
+        #fdfdff 100%
+    ), #fff;
+}
+
+.custom-theme-background .guild-discovery-view .hero {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.guild-discovery-view .hero::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    height: 1px;
+    width: 100%;
+    background-color: var(--divider-strong);
+}
+
+.guild-discovery-view .hero .text-container {
+    width: 100%;
+    max-width: 1300px;
+    padding-left: 32px;
+}
+
+.is-mobile .guild-discovery-view .hero .text-container {
+    padding-left: 16px;
+}
+
+.guild-discovery-view .hero .text-container h2 {
+    font-family: var(--font-headline);
+    font-size: 44px;
+    line-height: 0.95;
+    font-weight: 800;
+    max-width: 740px;
+    text-transform: uppercase;
+    color: var(--header-primary);
+}
+
+.is-mobile .guild-discovery-view .hero .text-container h2 {
+    font-size: 28px;
+}
+
+.guild-discovery-view .hero .text-container p {
+    font-family: var(--font-primary);
+    font-size: 16px;
+    line-height: 1.25;
+    font-weight: 500;
+    margin-top: 16px;
+    max-width: 600px;
+    color: var(--text-muted);
+}
+
+.guild-discovery-view .guilds-header {
+    font-size: 20px;
+    line-height: 1.2;
+    font-weight: 600;
+    padding-top: 24px;
+    padding-left: 32px;
+    width: 100%;
+    max-width: 1300px;
+    color: var(--header-primary);
+}
+
+.is-mobile .guild-discovery-view .guilds-header {
+    font-size: 18px;
+    padding-top: 16px;
+    padding-left: 16px;
+}
+
+.guild-discovery-view .guilds {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px,1fr));
+    gap: 16px;
+    width: 100%;
+    max-width: 1300px;
+    padding: 16px 32px;
+}
+
+.is-mobile .guild-discovery-view .guilds {
+    padding: 16px;
+}

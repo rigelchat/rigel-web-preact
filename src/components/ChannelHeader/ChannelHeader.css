@@ -1,0 +1,133 @@
+
+.guild-text-channel-view .channel-header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 48px;
+    padding: 8px;
+    color: var(--text-normal);
+    grid-area: channel-header;
+}
+
+.theme-dark .guild-text-channel-view .channel-header {
+    background: var(--bg-overlay-2, var(--background-primary));
+}
+
+.theme-light .guild-text-channel-view .channel-header {
+    background: var(--bg-overlay-1, var(--background-primary));
+}
+
+.guild-text-channel-view .channel-header .channel-meta {
+    display: flex;
+    align-items: center;
+    flex: 1 1 auto;
+}
+
+.guild-text-channel-view .channel-header .channel-meta .icon {
+    width: 24px;
+    height: 24px;
+    margin: 0 8px;
+    color: var(--channel-icon);
+}
+
+.guild-text-channel-view .channel-header .channel-meta h1 {
+    font-size: 16px;
+    line-height: 1.25;
+    font-weight: 600;
+    color: var(--text-normal);
+    margin-right: 8px;
+}
+
+.guild-text-channel-view .channel-header .toolbar {
+    display: flex;
+    align-items: center;
+}
+
+.guild-text-channel-view .channel-header .toolbar .button {
+    width: auto;
+    height: 24px;
+    margin: 0 8px;
+    color: var(--interactive-normal);
+    cursor: pointer;
+}
+
+.guild-text-channel-view .channel-header .toolbar .button.selected {
+    color: var(--interactive-active);
+}
+
+.guild-text-channel-view .channel-header .toolbar .button:hover {
+    color: var(--interactive-hover);
+}
+
+.guild-text-channel-view .channel-header .toolbar .button svg {
+    width: 24px;
+    height: 24px;
+}
+
+.guild-text-channel-view .channel-header .toolbar .search-bar {
+    display: flex;
+    align-items: center;
+    width: 144px;
+    height: 24px;
+    margin: 0px 8px;
+    padding: 0px 2px;
+    border-radius: 4px;
+    color: var(--text-normal);
+    cursor: text;
+    overflow: hidden;
+    background: var(--bg-overlay-3, var(--background-tertiary));
+    transition: width 0.25s;
+}
+
+.guild-text-channel-view .channel-header .toolbar .search-bar:has(input:focus) {
+    width: 240px;
+}
+
+.guild-text-channel-view .channel-header .toolbar .search-bar input {
+    width: 100%;
+    padding: 0 2px 0 4px;
+    flex: 1 1 0%;
+    font-family: inherit;
+    font-size: 14px;
+    color: var(--text-normal);
+    background: none;
+    border: none;
+    caret-color: var(--text-normal);
+}
+
+.guild-text-channel-view .channel-header .toolbar .search-bar .icon-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    padding: 4px;
+}
+
+.guild-text-channel-view .channel-header .toolbar .search-bar .icon-container svg {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    opacity: 0;
+    color: var(--text-muted);
+    transform: rotate(90deg);
+    transition: transform 0.1s ease-out, opacity 0.1s ease-out;
+}
+
+.guild-text-channel-view .channel-header .toolbar .search-bar .icon-container svg.visible {
+    opacity: 1;
+    transform: rotate(0deg);
+}
+
+.guild-text-channel-view .channel-header::after {
+    content: "";
+    position: absolute;
+    bottom: 1px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    box-shadow: var(--shadow-ledge);
+    pointer-events: none;
+}

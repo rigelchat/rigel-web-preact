@@ -1,0 +1,29 @@
+.sidebar-wrapper {
+    flex: 0 0 240px;
+    border-top-left-radius: 8px;
+    overflow: hidden;
+}
+
+.is-mobile .sidebar-wrapper {
+    flex: 1;
+    border-top-left-radius: 24px;
+}
+
+.sidebar-wrapper .sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 240px;
+    height: 100%;
+}
+
+.theme-dark .sidebar-wrapper .sidebar {
+    background: var(--bg-overlay-3, var(--background-secondary));
+}
+
+.theme-light .sidebar-wrapper .sidebar {
+    background: var(--bg-overlay-2, var(--background-secondary));
+}
+
+.is-mobile .sidebar-wrapper .sidebar {
+    width: 100%;
+}

@@ -1,0 +1,1008 @@
+/* Conteneur principal */
+.visual-media-item-container,
+.visual-media-item-container-discord {
+    width: 100%;
+    height: 100%;
+    max-width: 550px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.mosaic-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    max-width: 100%;
+}
+
+.mosaic-container.single {
+    width: auto;
+}
+
+/* Layout 1x1 */
+.one-by-one-grid,
+.one-by-one-grid-discord {
+    display: inline-block;
+    width: fit-content;
+    max-height: 350px;
+    max-width: 550px;
+}
+
+.one-by-one-grid-single,
+.one-by-one-grid-single-discord {
+    max-width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    width: fit-content;
+}
+
+.one-by-one-grid-mosaic {
+    display: flex;
+    max-height: 280px;
+    width: 100%;
+}
+
+/* Layout 1x2 */
+.one-by-two-grid {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    max-height: 280px;
+}
+
+.one-by-two-layout-three-grid {
+    max-height: 350px;
+}
+
+.one-by-two-grid-item {
+    flex: 1;
+    min-width: 0;
+}
+
+.one-by-two-grid .item-content-container,
+.one-by-two-grid .lazy-img {
+    height: 100%;
+}
+
+.one-by-two-solo-item {
+    flex: 2;
+}
+
+.one-by-two-duo-item {
+    flex: 1;
+}
+
+/* Layout 2x1 */
+.two-by-one-grid {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 4px;
+}
+
+.two-by-one-grid-item {
+    flex: 1;
+    min-height: 0;
+}
+
+/* Layout 2x2 */
+.two-by-two-grid {
+    display: grid;
+    flex-direction: row;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 4px;
+    max-height: 350px;
+}
+
+/* Layout 3x3 */
+.three-by-three-grid {
+    display: grid;
+    flex-direction: row;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 4px;
+}
+
+.three-by-three-grid .lazy-img-container,
+.three-by-three-grid .lazy-img {
+    aspect-ratio: 1/1;
+}
+
+/* Espacements entre grilles */
+.one-by-one-grid+.three-by-three-grid,
+.one-by-two-grid+.three-by-three-grid {
+    margin-top: 4px;
+}
+
+/* Item de média */
+.media-item {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: start;
+    max-width: 100%;
+    height: 100%;
+    position: relative;
+    max-height: inherit;
+    border-radius: 2px;
+    overflow: hidden;
+    width: 100%;
+    align-items: center;
+    justify-self: auto !important;
+}
+
+.item-content-container {
+    width: 100%;
+    height: 100%;
+    flex: auto;
+}
+
+/* Images */
+.image-content {
+    display: flex;
+    flex-flow: column nowrap;
+    flex: auto;
+}
+
+.image-container {
+    display: flex;
+    flex-flow: row nowrap;
+    flex: auto;
+    width: 100%;
+    height: 100%;
+}
+
+.image-wrapper {
+    display: block;
+    position: relative;
+    user-select: text;
+    overflow: hidden;
+    border-radius: 3px;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.image-zoom {
+    cursor: zoom-in;
+}
+
+.original-link {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.clickable-wrapper,
+.loading-overlay {
+    width: 100%;
+    height: 100%;
+}
+
+.lazy-img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+/* Boutons de survol */
+.hover-button-group {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    display: flex;
+    gap: 4px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.media-item:hover .hover-button-group {
+    opacity: 1;
+}
+
+.hover-button {
+    width: 32px;
+    height: 32px;
+    background-color: var(--background-floating);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--interactive-normal);
+    transition: all 0.2s ease;
+}
+
+.hover-button:hover {
+    background-color: var(--background-modifier-hover);
+    color: var(--interactive-hover);
+}
+
+.hover-button svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Vidéos */
+.video-content {
+    display: flex;
+    flex-flow: column nowrap;
+    flex: auto;
+}
+
+.video-container {
+    display: flex;
+    flex-flow: row nowrap;
+    flex: auto;
+    width: 100%;
+    height: 100%;
+}
+
+.lazy-video {
+    width: 100%;
+    height: 100%;
+    border-radius: 3px;
+}
+
+/* Médias non-visuels */
+.non-visual-media-item-container {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 8px;
+}
+
+.non-visual-media-item {
+    width: fit-content;
+    max-width: 100%;
+}
+
+.non-visual-media-item+.non-visual-media-item {
+    margin-top: 8px;
+}
+
+.attachment-file {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    background-color: var(--background-secondary);
+    border-radius: 8px;
+    border: 1px solid var(--background-modifier-accent);
+    max-width: 400px;
+}
+
+.attachment-file-icon {
+    font-size: 24px;
+    opacity: 0.7;
+}
+
+.attachment-file-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+.attachment-file-name {
+    font-weight: 500;
+    color: var(--text-normal);
+    word-break: break-word;
+}
+
+.attachment-file-size {
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+/* Footer */
+.media-footer {
+    margin-top: 8px;
+}
+
+/* Classes Discord pour mosaïc items */
+.mosaic-item-discord {
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: start;
+    max-width: 100%;
+    height: 100%;
+    border-radius: 2px;
+    overflow: hidden;
+    width: 100%;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.mosaic-item-no-justify-discord {
+    justify-self: auto !important;
+}
+
+.mosaic-item-media-mosaic-discord {
+    max-height: inherit;
+}
+
+.hide-overflow-discord {
+    overflow: hidden;
+}
+
+.mosaic-item-content-discord {
+    width: 100%;
+    height: 100%;
+    flex: auto;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.image-wrapper-discord {
+    display: block;
+    position: relative;
+    user-select: text;
+    overflow: hidden;
+    border-radius: 3px;
+    margin: auto;
+    width: fit-content;
+    height: 100%;
+    max-width: 100%;
+    max-height: inherit;
+    box-sizing: border-box;
+}
+
+.loading-overlay-discord {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+/* Classes Discord pour les vidéos */
+.wrapper-paused-discord {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.wrapper-discord {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.video-discord {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-height: inherit;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+/* Contrôles vidéo Discord */
+.videoControls {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -10px;
+    padding-bottom: 10px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: hsl(var(--black-500-hsl) / 0.6);
+    height: 42px;
+    transform: translateY(0%);
+    z-index: 5;
+    overflow: visible;
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Animation des contrôles selon la position de la souris */
+.videoControls.controlsVisible {
+    transform: translateY(0%);
+}
+
+.videoControls.controlsHidden {
+    transform: translateY(100%);
+}
+
+.videoButton {
+    margin-right: 8px;
+    line-height: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 6;
+}
+
+.controlIcon {
+    display: block;
+    width: 32px;
+    height: 32px;
+    padding: 4px;
+    cursor: pointer;
+    flex: 0 0 auto;
+    opacity: 0.6;
+    color: var(--white-500);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.controlIcon:hover {
+    opacity: 1;
+}
+
+.controlIcon:active {
+    transform: translateY(1px);
+}
+
+.controlIcon2 {
+    width: 32px;
+    height: 32px;
+    color: var(--white-500);
+    display: block;
+    padding: 4px;
+    cursor: pointer;
+    flex: 0 0 auto;
+    opacity: 0.6;
+    transition: opacity 0.2s ease;
+}
+
+.controlIcon2:hover {
+    opacity: 1;
+}
+
+.controlIcon2:active {
+    transform: translateY(1px);
+}
+
+.button_control .contents_control {
+    --button--underline-color: transparent;
+    background-image: linear-gradient(to top, transparent, transparent var(--custom-button-link-underline-offset), transparent var(--custom-button-link-underline-offset), transparent var(--custom-button-link-underline-stop), transparent var(--custom-button-link-underline-stop));
+    background-image: linear-gradient(to top, transparent, transparent var(--custom-button-link-underline-offset), var(--button--underline-color) var(--custom-button-link-underline-offset), var(--button--underline-color) var(--custom-button-link-underline-stop), transparent var(--custom-button-link-underline-stop));
+}
+
+.lineHeightReset {
+    line-height: 0;
+}
+
+.durationTimeWrapper {
+    flex: 0 0 auto;
+    margin: 4px;
+    height: 12px;
+    display: flex;
+    align-items: center;
+    user-select: none;
+}
+
+.durationTimeDisplay {
+    font-weight: 500;
+    display: inline-block;
+    font-family: var(--font-code);
+    font-size: 12px;
+    line-height: 12px;
+    color: var(--white-500);
+    user-select: none;
+}
+
+.durationTimeSeparator {
+    font-weight: 500;
+    display: inline-block;
+    font-family: var(--font-code);
+    font-size: 12px;
+    line-height: 12px;
+    margin: 0 2px;
+    color: var(--white-500);
+    user-select: none;
+}
+
+/* Barre de progression horizontale */
+.horizontal {
+    flex: 1;
+    margin: 0 8px;
+    overflow: visible;
+    position: relative;
+}
+
+.mediaBarInteraction {
+    position: relative;
+    height: 6px;
+    cursor: pointer;
+    overflow: visible;
+}
+
+.mediaBarInteraction::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 0;
+    right: 0;
+    bottom: -10px;
+    z-index: -1;
+}
+
+.mediaBarWrapper {
+    position: relative;
+    flex: 1 1 auto;
+    height: 6px;
+    background-color: hsl(210 calc(1 * 9.259%) 78.824% /.3);
+    border-radius: 3px;
+    overflow: visible;
+}
+
+.fakeEdges {
+    border-radius: 3px;
+}
+
+.buffer {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+}
+
+.mediaBarPreview {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 3px;
+    z-index: 1;
+}
+
+.mediaBarProgress {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    background-color: var(--brand-500);
+    border-radius: 3px;
+    z-index: 2;
+}
+
+.mediaBarGrabber {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 12px;
+    height: 12px;
+    background-color: var(--white-500);
+    border-radius: 50%;
+    transform: translate(50%, -50%);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.mediaBarInteraction:hover .mediaBarGrabber {
+    opacity: 1;
+}
+
+.bubble {
+    border-radius: 3px;
+    position: absolute;
+    top: -28px;
+    padding: 0 8px;
+    transform: translatex(-50%);
+    width: auto;
+    height: 18px;
+    line-height: 18px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 12px;
+    color: var(--primary-100);
+    opacity: 0;
+    transition: opacity .2s ease-out;
+    pointer-events: none;
+    background-color: var(--black-500);
+    z-index: 999;
+    user-select: none;
+}
+
+.mediaBarInteraction:hover .bubble {
+    opacity: 1 !important;
+}
+
+/* Volume et contrôles flexibles */
+.flex_volume {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.container_media {
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+    position: relative;
+}
+
+.container_media:hover .volumeButtonSlider_media.sliderVisible_media,
+.volumeButtonSlider_media:hover {
+    display: initial !important;
+}
+
+.volumeButton_media {
+    line-height: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.volumeButtonSlider_media {
+    position: absolute;
+    bottom: calc(100% + 2px);
+    left: -78px;
+    right: 0;
+    display: none;
+    -webkit-app-region: no-drag;
+    padding-bottom: 12px;
+    margin-bottom: -12px;
+}
+
+.volumeButtonSlider_media::before {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: -30px;
+    right: -30px;
+    height: 20px;
+    background: transparent;
+}
+
+.volumeButtonSlider_media.sliderVisible_media {
+    display: inline;
+    display: initial;
+}
+
+.volumeSliderWrapper {
+    margin-bottom: 4px;
+    margin-left: -4px;
+}
+
+/* Barre de volume verticale */
+.vertical {
+    display: flex;
+    align-items: center;
+    transform-origin: top;
+    transform: rotate(270deg);
+    height: 54px;
+    width: 140px;
+}
+
+.mediaBarInteractionVolume {
+    flex: none;
+    align-self: center;
+    border-radius: 8px;
+    background-color: hsl(0 calc(1 * 0%) 0% /.7);
+    width: 100px;
+    margin: 0 4px 0 0;
+    display: flex;
+    align-items: center;
+    border: hsl(0 calc(1 * 0%) 0% /.7);
+    padding: 8px 8px 8px 8px;
+}
+
+.mediaBarWrapperVolume {
+    position: relative;
+    flex: 1 1 auto;
+    height: 8px;
+    background-color: hsl(210 calc(1 * 9.259%) 78.824% /.3);
+    border-radius: 3px;
+}
+
+.mediaBarWrapperVolume .mediaBarProgress {
+    transition: width 0.01s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Boutons avec styles Discord */
+.button_control {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lookBlank {
+    background: transparent;
+}
+
+.colorBrand {
+    color: var(--brand-500);
+}
+
+.grow {
+    transition: transform 0.1s ease;
+}
+
+.grow:hover {
+    transform: scale(1.1);
+}
+
+.contents_control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Grabber Discord style */
+.full-motion .mediaBarGrabber {
+    transition: transform .1s ease-in-out, background-color .1s linear;
+}
+
+.mediaBarGrabber {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    z-index: 2;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    margin-top: -5px;
+    margin-right: -5px;
+    background-color: var(--brand-500);
+    transform: scale(0);
+    transform-origin: 50% 50%;
+    cursor: grab;
+    user-select: none;
+    transition: transform .1s ease-in-out, background-color .1s linear;
+}
+
+.mediaBarGrabber:active {
+    cursor: grabbing;
+}
+
+.mediaBarInteraction:hover .mediaBarGrabber,
+.mediaBarInteractionVolume:hover .mediaBarGrabber {
+    transform: scale(1);
+}
+
+.colorBrand {
+    color: var(--white-500);
+}
+
+.grow:hover {
+    transform: scale(1.05);
+}
+
+.contents_control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lineHeightReset {
+    line-height: 0;
+}
+
+/* Image de couverture vidéo */
+.video-poster-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+/* Bouton Play/Cover */
+.cover-discord {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+    z-index: 6;
+}
+
+.cover-discord.active {
+    opacity: 1;
+}
+
+.cover-discord.active:hover .icon-wrapper-discord {
+    opacity: 1.0;
+}
+
+.icon-wrapper-discord {
+    transition: opacity 0.25s, color 0.25s;
+    padding: 12px;
+    border-radius: 24px;
+    background-color: var(--black-500);
+    color: var(--white-500);
+    opacity: 0.6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+}
+
+.icon-discord {
+    display: block;
+    height: 24px;
+    width: 24px;
+    margin-left: 1px;
+    margin-right: -1px;
+    color: #ffffff;
+}
+
+/* Animation Play/Pause Pop */
+.play-pause-pop-discord {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.play-pause-pop-icon-discord {
+    width: 48px;
+    height: 48px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 50%;
+    padding: 12px;
+}
+
+/* Hover Button Group Discord */
+.hover-button-group-discord {
+    display: flex;
+    opacity: 0;
+    z-index: 4;
+    position: absolute;
+    border-radius: 5px;
+    top: 4px;
+    right: 4px;
+    background-color: var(--background-primary);
+    overflow: hidden;
+    transition: opacity 0.2s ease;
+}
+
+.media-item:hover .hover-button-group-discord,
+.mosaic-item-discord:hover .hover-button-group-discord {
+    opacity: 1;
+}
+
+.anchor-discord {
+    text-decoration: none;
+    color: inherit;
+}
+
+.anchor-underline-on-hover-discord:hover {
+    text-decoration: underline;
+}
+
+.hover-button-discord {
+    display: flex;
+    padding: 6px;
+    color: var(--interactive-normal);
+    cursor: pointer;
+}
+
+.hover-button-discord:hover {
+    background-color: var(--background-modifier-hover);
+    color: var(--interactive-hover);
+}
+
+.download-hover-button-icon-discord {
+    width: 20px;
+    height: 20px;
+}
+
+.sizer-discord {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    pointer-events: none;
+}
+
+/* Responsive - maintenir la structure originale */
+@media (max-width: 768px) {
+    .visual-media-item-container {
+        max-width: 100%;
+    }
+
+    /* Ajuster seulement la taille, pas la structure */
+    .one-by-one-grid,
+    .one-by-two-grid,
+    .two-by-two-grid,
+    .three-by-three-grid {
+        max-width: 100%;
+    }
+
+    /* Réduire légèrement les gaps sur mobile */
+    .one-by-two-grid,
+    .two-by-two-grid,
+    .three-by-three-grid {
+        gap: 2px;
+        grid-gap: 2px;
+    }
+}
+
+/* Styles pour le drag-and-drop */
+body.dragging-volume,
+body.dragging-progress {
+    user-select: none;
+    cursor: grabbing !important;
+}
+
+/* Fullscreen personnalisé Discord */
+.custom-fullscreen {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    z-index: 9999 !important;
+    background: var(--background-primary) !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    max-width: none !important;
+    max-height: none !important;
+}
+
+.custom-fullscreen .image-wrapper {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 0 !important;
+}
+
+.custom-fullscreen .loading-overlay-discord {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 0 !important;
+}
+
+.custom-fullscreen .wrapper-media-mosaic-discord {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 0 !important;
+}
+
+.custom-fullscreen .video-discord {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+}
+
+/* Assurer que les contrôles restent visibles en fullscreen */
+.custom-fullscreen .videoControls {
+    position: absolute !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 10000 !important;
+}
+
+.message-attachments {
+    padding-top: .125rem;
+    padding-bottom: .125rem;
+}

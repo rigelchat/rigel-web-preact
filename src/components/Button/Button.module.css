@@ -1,0 +1,194 @@
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 2px 16px;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    color: var(--text-normal);
+    background: none;
+    border: none;
+    border-radius: 3px;
+    transition: color 170ms ease, background-color 170ms ease;
+}
+
+.button svg {
+    width: 22px;
+    height: 22px;
+}
+
+.button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.button.sizeSmall {
+    height: 32px;
+    min-width: 60px;
+    min-height: 32px;
+}
+
+.button.sizeMini {
+    padding: 0 4px;
+}
+
+.button.sizeMedium {
+    height: 38px;
+    min-width: 96px;
+    min-height: 38px;
+}
+
+.button.sizeLarge {
+    height: 44px;
+    min-width: 130px;
+    min-height: 44px;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.button.fullWidth {
+    width: 100%;
+}
+
+.button.submitting {
+    pointer-events: none;
+}
+
+.button.primary {
+    color: var(--button-filled-brand-text);
+    background-color: var(--button-filled-brand-background);
+}
+
+.button.primary:hover {
+    background-color: var(--button-filled-brand-background-hover);
+}
+
+.button.primary:active {
+    background-color: var(--button-filled-brand-background-active);
+}
+
+.button.primary:disabled {
+    background-color: var(--button-filled-brand-background);
+}
+
+.button.secondary {
+    color: var(--button-secondary-text);
+    background-color: var(--button-secondary-background);
+}
+
+.button.secondary:hover {
+    background-color: var(--button-secondary-background-hover);
+}
+
+.button.secondary:active {
+    background-color: var(--button-secondary-background-active);
+}
+
+.button.secondary:disabled {
+    background-color: var(--button-secondary-background-disabled);
+}
+
+.button.success {
+    color: var(--white);
+    background-color: var(--button-positive-background);
+}
+
+.button.success:hover {
+    background-color: var(--button-positive-background-hover);
+}
+
+.button.success:active {
+    background-color: var(--button-positive-background-active);
+}
+
+.button.success:disabled {
+    background-color: var(--button-positive-background-disabled);
+}
+
+.button.danger {
+    color: var(--white);
+    background-color: var(--button-danger-background);
+}
+
+.button.danger:hover {
+    background-color: var(--button-danger-background-hover);
+}
+
+.button.danger:active {
+    background-color: var(--button-danger-background-active);
+}
+
+.button.danger:disabled {
+    background-color: var(--button-danger-background-disabled);
+}
+
+.button.link:hover {
+    text-decoration: underline;
+}
+
+.button.link.colorLink {
+    color: var(--text-link);
+}
+
+.button .pulsingEllipsis {
+    width: 28px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.button .pulsingEllipsis span {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    margin-right: 2px;
+    background-color: var(--primary-100);
+    border-radius: 3px;
+    opacity: 0.3;
+    animation: 1.4s ease-in-out 0s infinite normal none running spinner-pulsing-ellipsis;
+}
+
+.button.primary .pulsingEllipsis span {
+    background-color: var(--white-500);
+}
+
+.button.secondary .pulsingEllipsis span {
+    background-color: var(--primary-100);
+}
+
+.button.success .pulsingEllipsis span {
+    background-color: var(--white);
+}
+
+.button.danger .pulsingEllipsis span {
+    background-color: var(--white);
+}
+
+.button .pulsingEllipsis span:nth-of-type(2) {
+    animation-delay: 0.2s;
+}
+
+.button .pulsingEllipsis span:nth-of-type(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes spinner-pulsing-ellipsis {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.3;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

@@ -1,0 +1,154 @@
+@import "/assets/fonts/gg-sans/gg-sans.css";
+@import "/assets/fonts/nunito-sans/nunito-sans.css";
+
+@font-face {
+    font-family: "ABC Ginto Nord";
+    font-style: normal;
+    font-weight: 800;
+    src: url("/assets/fonts/abc-ginto-nord/800.woff2") format("woff2");
+}
+
+/* :root {
+    --font-primary: "Nunito Sans", "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --font-display: "Nunito Sans", "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --font-headline: "ABC Ginto Nord", "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --font-code: "gg mono", "Source Code Pro", Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+    --font-clan-body: Fraunces, "Nunito Sans", serif, "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --font-clan-signature: Corinthia, "Nunito Sans", cursive, "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --font-display-marketing: "ABC Ginto Discord", "Nunito Sans", serif, "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif
+} */
+
+:root {
+    --font-primary: "gg sans", "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --font-display: "gg sans", "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --font-headline: "ABC Ginto Nord", "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --font-code: "gg mono", "Source Code Pro", Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+    --font-clan-body: Fraunces, "gg sans", serif, "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --font-clan-signature: Corinthia, "gg sans", cursive, "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --font-display-marketing: "ABC Ginto Discord", "gg sans", serif, "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.is-mobile * {
+    cursor: default !important;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body, textarea, input, button, select, ::placeholder {
+    font-family: var(--font-primary);
+    text-rendering: optimizeLegibility;
+}
+
+a, div, span, strong, button, input, textarea, select, label {
+    outline: 0
+}
+
+strong {
+    font-weight: 600;
+}
+
+img[alt] {
+    text-indent: -9999px
+}
+
+#app {
+    position: relative;
+    font-family: var(--font-primary);
+    color: var(--text-normal);
+    background: var(--bg-overlay-app-frame, var(--background-tertiary));
+    width: 100%;
+    height: 100%;
+    user-select: none;
+    overflow: hidden;
+}
+
+.anchor {
+    color: var(--text-link);
+    text-decoration: var(--link-decoration);
+    cursor: pointer;
+}
+
+.anchor:hover {
+    text-decoration: underline;
+}
+
+.view-wrapper {
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.is-mobile .view-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    will-change: transform;
+    z-index: 9;
+    touch-action: pan-y;
+}
+
+.tooltip {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    max-width: 196px;
+    padding: 8px 12px;
+    gap: 8px;
+    background-color: var(--background-floating);
+    color: var(--text-normal);
+    box-shadow: var(--shadow-high);
+    pointer-events: none;
+    z-index: 99999;
+    transform: translateY(-50%);
+    animation: discord_tooltip_fadeIn 0.15s cubic-bezier(0.3, 0.6, 0, 1.8);
+}
+
+.custom-theme-background .tooltip {
+    border: 1px solid var(--border-strong);
+}
+
+.tooltip::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    margin-top: -5px;
+    border: 5px solid transparent;
+    border-top-color: var(--background-floating);
+    transform: rotate(90deg);
+}
+
+.custom-theme-background .tooltip::before {
+    display: none;
+}
+
+.tooltip span {
+    display: -webkit-box;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 600;
+    overflow: hidden;
+    word-wrap: break-word;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+@keyframes discord_tooltip_fadeIn {
+    from { opacity: 0; transform: scale(0.95) translateY(-50%); }
+    to { opacity: 1; transform: scale(1) translateY(-50%); }
+}

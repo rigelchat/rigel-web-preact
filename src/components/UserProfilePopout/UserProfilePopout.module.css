@@ -1,0 +1,296 @@
+.userProfilePopoutOuter {
+    position: relative;
+    box-sizing: content-box;
+    width: 340px;
+    max-height: calc(100vh - 20px);
+    border-radius: 8px;
+    background-color: var(--profile-gradient-primary-color);
+    box-shadow: var(--elevation-high);
+}
+
+.userProfilePanelOuter {
+    position: relative;
+    width: 340px;
+    height: 100%;
+    background-color: var(--profile-gradient-primary-color);
+}
+
+.userProfilePopoutOuter.themed {
+    padding: 4px;
+    background: linear-gradient(
+        var(--profile-gradient-primary-color),
+        var(--profile-gradient-secondary-color)
+    );
+}
+
+.userProfilePanelOuter.themed {
+    background: linear-gradient(
+        var(--profile-gradient-primary-color),
+        var(--profile-gradient-secondary-color)
+    );
+}
+
+.userProfilePopoutInner {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.userProfilePopoutOuter .userProfilePopoutInner {
+    border-radius: 8px;
+    max-height: calc(100vh - 28px);
+}
+
+.userProfilePopoutOuter.themed .userProfilePopoutInner {
+    max-height: calc(100vh - 124px);
+}
+
+.userProfilePanelOuter .userProfilePopoutInner {
+    height: 100%;
+}
+
+.userProfilePopoutOuter.withBanner .userProfilePopoutInner,
+.userProfilePanelOuter.withBanner .userProfilePopoutInner {
+    background: linear-gradient(
+        var(--profile-gradient-primary-color),
+        var(--profile-gradient-primary-color) 120px,
+        var(--profile-gradient-secondary-color)
+    );
+}
+
+.userProfilePopoutOuter.themed .userProfilePopoutInner::before {
+    content: "";
+    position: absolute;
+    width: calc(100% - 8px);
+    height: calc(100% - 8px);
+    background-color: var(--profile-gradient-overlay-color);
+    border-radius: 4px;
+    pointer-events: none;
+}
+
+.userProfilePanelOuter.themed .userProfilePopoutInner::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--profile-gradient-overlay-color);
+    pointer-events: none;
+}
+
+.bannerSVGWrapper {
+    contain: paint;
+    z-index: 0;
+}
+
+.bannerSVGWrapper .banner {
+    width: 100%;
+    height: 60px;
+    transition: background-color 0.1s;
+}
+
+.userProfilePopoutOuter .bannerSVGWrapper .banner {
+    border-radius: 8px 8px 0 0;
+}
+
+.userProfilePopoutOuter.themed .bannerSVGWrapper .banner {
+    height: 90px;
+    border-radius: 4px 4px 0 0;
+}
+
+.userProfilePanelOuter.themed .bannerSVGWrapper .banner {
+    height: 90px;
+}
+
+.userProfilePopoutOuter.withBanner .bannerSVGWrapper .banner,
+.userProfilePanelOuter.withBanner .bannerSVGWrapper .banner {
+    height: 120px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.avatarWrapper {
+    position: absolute;
+    top: 16px;
+    left: 22px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 0;
+}
+
+.userProfilePopoutOuter.themed .avatarWrapper,
+.userProfilePanelOuter.themed .avatarWrapper {
+    top: 46px;
+}
+
+.userProfilePopoutOuter.withBanner .avatarWrapper,
+.userProfilePanelOuter.withBanner .avatarWrapper {
+    top: 76px;
+}
+
+.avatarHint {
+    position: absolute;
+    opacity: 0;
+    transition: opacity.1s ease;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+}
+
+.avatarWrapper:hover .avatarHint {
+    opacity: 1;
+}
+
+.avatarHint .hintInner {
+        box-sizing: border-box;
+    font-size: 10px;
+    line-height: 12px;
+    font-weight: 700;
+    width: 100%;
+    padding-top: 4px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-transform: uppercase;
+    box-shadow: inset 0 0 120px hsl(var(--black-500-hsl) / 0.75);
+    color: var(--white-500);
+}
+
+.avatarWrapper .avatarSVGWrapper {
+    position: absolute;
+    contain: paint;
+
+        pointer-events: none;
+    position: relative;
+    display: block;
+    width: auto;
+}
+
+.avatarWrapper .avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+.profileBadges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2px;
+    min-height: 22px;
+
+
+            position: relative;
+    top: 12px;
+    right: 16px;
+    width: -moz-fit-content;
+    width: fit-content;
+    align-self: flex-end;
+    background-color: var(--profile-body-background-color);
+    border-radius: 8px;
+    max-width: 190px;
+}
+
+.profileBadges.withContent {
+    padding: 4px;
+}
+
+.profileBadges .badge {
+    width: 22px;
+    height: 22px;
+}
+
+.overlayBackground {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    max-height: calc(100vh - 128px);
+    margin: 28px 16px 16px;
+    background-color: var(--profile-body-background-color);
+    border-radius: 8px;
+}
+
+.overlayBackground .usernameSection {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 12px 12px 0;
+}
+
+.overlayBackground .usernameSection .nickname {
+    font-size: 20px;
+    line-height: 1.2;
+    font-weight: 600;
+    word-break: break-word;
+    color: var(--header-primary);
+}
+
+.overlayBackground .usernameSection .userTag {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 500;
+    color: var(--header-primary);
+}
+
+.overlayBackground .usernameSection .userTag .dotSpacer {
+    width: 4px;
+    height: 4px;
+    background-color: var(--header-primary);
+    border-radius: 50%;
+}
+
+.overlayBackground .divider {
+    height: 1px;
+    margin: 12px 12px 0;
+    background-color: var(--profile-body-divider-color);
+}
+
+.overlayBackground .aboutSection,
+.overlayBackground .sinceSection {
+    padding: 12px 12px 0;
+}
+
+.overlayBackground .aboutSection :global(.markup) {
+    font-size: 14px;
+}
+
+.overlayBackground .aboutSection .title,
+.overlayBackground .sinceSection .title {
+    font-family: var(--font-display);
+    font-size: 12px;
+    line-height: 1.3;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .02em;
+
+    display: flex;
+    font-weight: 700;
+    margin-bottom: 6px;
+
+        color: var(--header-primary);
+}
+
+.overlayBackground .sinceSection .body {
+    font-size: 14px;
+    line-height: 1.3;
+    font-weight: 400;
+    color: var(--text-normal);
+}
+
+.loadingPopout {
+    display: flex;
+    justify-content: center;
+    padding: 8px;
+    background-color: var(--background-secondary);
+}

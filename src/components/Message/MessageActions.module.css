@@ -1,0 +1,67 @@
+.messageActionsWrapper {
+    position: absolute;
+    top: -25px;
+    right: 0;
+    padding: 0 14px 0 32px;
+    z-index: 1;
+}
+
+.groupStart .messageActionsWrapper {
+    top: -16px;
+}
+
+.messageActions {
+    display: grid;
+    align-items: center;
+    grid-auto-flow: column;
+    padding: 2px;
+    border-radius: 8px;
+    border: 1px solid var(--border-faint);
+    background-color: var(--background-nested-floating);
+    box-shadow: var(--shadow-low);
+    transition: box-shadow 0.1s ease-out;
+}
+
+.messageActions button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+    background: none;
+    padding: 4px;
+    color: var(--interactive-normal);
+}
+
+.messageActions button:hover {
+    background: var(--background-modifier-hover);
+    color: var(--interactive-hover);
+}
+
+.messageActions button:active {
+    background: var(--background-modifier-active);
+    color: var(--interactive-active);
+}
+
+.messageActions button.danger {
+    color: var(--status-danger);
+}
+
+.messageActions button.danger:hover {
+    color: var(--red-400);
+}
+
+.messageActions button svg {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.messageActions button:hover svg {
+    transform: scale(1.1);
+}
+
+.messageActions button:active svg {
+    transform: scale(1);
+}

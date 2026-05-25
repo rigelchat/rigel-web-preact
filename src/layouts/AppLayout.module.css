@@ -1,0 +1,64 @@
+.appLayer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    animation-duration: 0.28s;
+    animation-timing-function: cubic-bezier(0.2, 0.8, 0.425, 1.18);
+}
+
+.appLayer[data-layer="base"] {
+    display: flex;
+    overflow: hidden;
+}
+
+.appLayer.animating {
+    pointer-events: none;
+    will-change: transform, opacity;
+}
+
+.appLayer.animation-forward-in {
+    animation-name: discord_layer_forwardIn;
+}
+
+.appLayer.animation-forward-out {
+    animation-name: discord_layer_forwardOut;
+}
+
+.appLayer.animation-backwards-in {
+    animation-name: discord_layer_backwardsIn;
+}
+
+.appLayer.animation-backwards-out {
+    animation-name: discord_layer_backwardsOut;
+}
+
+.appLayer.animation-slide-up {
+    animation: discord_layer_slideUp 0.42s cubic-bezier(0.2, 1, 0.36, 1);
+}
+
+@keyframes discord_layer_forwardIn {
+    from { opacity: 0; transform: scale(0.93); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes discord_layer_forwardOut {
+    from { opacity: 1; transform: scale(1); }
+    to { opacity: 0; transform: scale(0.93); }
+}
+
+@keyframes discord_layer_backwardsIn {
+    from { opacity: 0; transform: scale(1.1); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes discord_layer_backwardsOut {
+    from { opacity: 1; transform: scale(1); }
+    to { opacity: 0; transform: scale(1.1); }
+}
+
+@keyframes discord_layer_slideUp {
+    from { transform: translateY(80%); }
+    to { transform: translateY(0); }
+}

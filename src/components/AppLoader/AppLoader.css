@@ -1,0 +1,131 @@
+.app-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0 16px;
+    background: var(--bg-overlay-2, var(--background-secondary));
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.app-loader .content {
+    text-align: center;
+}
+
+.app-loader .content video {
+    width: 200px;
+    height: 200px;
+}
+
+.app-loader .content h1 {
+    color: var(--header-primary);
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-top: -20px;
+    margin-bottom: 8px;
+}
+
+.app-loader .content .tip {
+    color: var(--text-normal);
+    font-size: 16px;
+    line-height: 20px;
+    max-width: 300px;
+}
+
+.app-loader .content .tip .keybind {
+    display: inline-flex;
+    font-size: 12px;
+    line-height: 12px;
+    text-transform: uppercase;
+    font-weight: 600;
+    height: 23px;
+    transform: translateY(-1px);
+}
+
+.app-loader .content .tip .keybind span {
+    display: block;
+    padding: 3px 6px 4px;
+    border-radius: 4px;
+    min-width: 14px;
+    min-height: 14px;
+    text-align: center;
+    color: var(--interactive-active);
+    background-color: var(--bg-mod-faint);
+    border: 1px solid var(--border-subtle);
+    box-shadow: inset 0 -4px 0 var(--bg-mod-faint);
+    cursor: default;
+}
+
+.app-loader .content .tip .keybind span:active {
+    height: 21px;
+    padding-bottom: 2px;
+    color: var(--interactive-normal);
+    border: 1px solid var(--border-strong);
+    box-shadow: inset 0 -2px 0 var(--bg-mod-subtle);
+    transform: translateY(2px);
+}
+
+.app-loader .content .error {
+    color: var(--text-normal);
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.app-loader .problem {
+    color: var(--header-primary);
+    padding-bottom: 32px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translate3d(0, 100%, 0);
+    transition: transform 0.2s ease-out;
+}
+
+.app-loader .problem.show {
+    transform: translatez(0);
+}
+
+.app-loader .problem .text {
+    font-size: 14px;
+    color: var(--header-secondary);
+    margin-bottom: 8px;
+}
+
+.app-loader .problem .links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.app-loader .problem .links a {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 16px;
+    color: var(--text-link);
+    text-decoration: none;
+}
+
+.app-loader .problem .links a:hover {
+    opacity: 0.8;
+}
+
+.app-loader .problem .links a:hover span {
+    text-decoration: underline;
+}
+
+.app-loader .problem .links a svg {
+    width: 16px;
+    height: auto;
+    margin-right: 4px;
+    vertical-align: middle;
+}

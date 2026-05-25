@@ -1,0 +1,54 @@
+.presets {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px 24px;
+    margin: 16px 0;
+}
+
+.presets .themeContainer {
+    position: relative;
+    width: 60px;
+    height: 60px;
+}
+
+.presets .themeContainer .theme {
+    --bg-light-overlay: linear-gradient(hsl(var(--white-500-hsl) / 0.5), hsl(var(--white-500-hsl) / 0.5));
+    --bg-dark-overlay: linear-gradient(hsl(var(--black-500-hsl) / 0.2), hsl(var(--black-500-hsl) / 0.2));
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.presets .themeContainer .theme.baseTheme {
+    box-shadow: inset 0 0 0 1px var(--interactive-normal);
+}
+
+.presets .themeContainer .circle {
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    border-radius: 50%;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    pointer-events: none;
+    box-shadow: inset 0 0 0 2px var(--brand-500), inset 0 0 0 4px var(--background-primary);
+}
+
+.presets .themeContainer .circle .icon {
+    position: absolute;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: var(--brand-500);
+}
+
+.presets .themeContainer .circle .icon svg {
+    width: 18px;
+    height: 18px;
+    color: var(--white-500);
+}

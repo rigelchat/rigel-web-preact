@@ -1,0 +1,28 @@
+.botBadge {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+    height: 16px;
+    margin-left: 3px;
+    padding: 0 4px;
+    font-size: 10px;
+    line-height: 15px;
+    text-transform: uppercase;
+    vertical-align: top;
+    color: var(--white-500);
+    background: var(--brand-500);
+    border-radius: 4px;
+}
+
+.botBadge .check {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-left: -2px;
+}
+
+.botBadge .text {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+}

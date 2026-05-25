@@ -1,0 +1,17 @@
+.slideContainer {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.slide {
+    width: 100%;
+}
+
+.slideMeasuring {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    z-index: -1;
+    pointer-events: none;
+}

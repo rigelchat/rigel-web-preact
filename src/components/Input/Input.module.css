@@ -1,0 +1,71 @@
+.inputWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border-radius: 3px;
+    background-color: var(--input-background);
+}
+
+.inputWrapper.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.input {
+    margin: 1px;
+    width: 100%;
+    color: var(--text-normal);
+    background: none;
+    border: none;
+    transition: border-color 0.2s ease-in-out;
+}
+
+.input:disabled {
+    cursor: not-allowed;
+}
+
+.input.sizeLarge {
+    font-size: 16px;
+    line-height: 32px;
+    height: 40px;
+    padding: 10px;
+}
+
+.input.sizeMedium {
+    font-size: 16px;
+    line-height: 32px;
+    height: 30px;
+    padding: 0 8px;
+}
+
+.input.withRightIcon {
+    padding-right: 32px;
+}
+
+.iconContainer {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: 8px;
+    width: 24px;
+    height: 24px;
+    color: var(--text-normal);
+    pointer-events: none;
+}
+
+.iconContainer svg {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    opacity: 0;
+    color: var(--text-muted);
+    transform: rotate(90deg);
+    transition: transform 0.1s ease-out, opacity 0.1s ease-out;
+}
+
+.iconContainer svg.visible {
+    opacity: 1;
+    transform: rotate(0deg);
+}

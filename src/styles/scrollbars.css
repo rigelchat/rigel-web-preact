@@ -1,0 +1,115 @@
+.scrollbar-auto::-webkit-scrollbar {
+    width: 16px;
+    height: 16px;
+}
+
+.scrollbar-auto::-webkit-scrollbar-track {
+    border: 4px solid transparent;
+    background-color: var(--scrollbar-auto-track);
+    background-clip: padding-box;
+    border-radius: 8px;
+}
+
+.scrollbar-auto::-webkit-scrollbar-thumb {
+    border: 4px solid transparent;
+    background-color: var(--scrollbar-auto-thumb);
+    background-clip: padding-box;
+    border-radius: 8px;
+    min-height: 40px;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+    border: 2px solid var(--scrollbar-thin-track);
+    background-color: var(--scrollbar-thin-track);
+    border-color: var(--scrollbar-thin-track);
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-thin-thumb);
+    background-clip: padding-box;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    min-height: 40px;
+}
+
+.scrollbar-auto::-webkit-scrollbar-corner,
+.scrollbar-thin::-webkit-scrollbar-corner {
+    background-color: transparent;
+}
+
+.custom-theme-background.theme-dark .scrollbar-auto.scrollbar-themed::-webkit-scrollbar-track {
+    background-size: 200vh;
+    background-image: linear-gradient(
+        rgb(var(--bg-overlay-color) / 0.6),
+        rgb(var(--bg-overlay-color) / 0.6)
+    ), var(--custom-theme-background);
+}
+
+.custom-theme-background.theme-dark .scrollbar-auto.scrollbar-themed::-webkit-scrollbar-thumb,
+.custom-theme-background.theme-dark .scrollbar-thin.scrollbar-themed::-webkit-scrollbar-thumb {
+    background-size: 200vh;
+    background-image: linear-gradient(
+        rgb(var(--bg-overlay-color-inverse) / var(--bg-overlay-opacity-4)),
+        rgb(var(--bg-overlay-color-inverse) / var(--bg-overlay-opacity-4))
+    ), var(--custom-theme-background);
+}
+
+.custom-theme-background.theme-light .scrollbar-auto.scrollbar-themed::-webkit-scrollbar-track {
+    background-size: 200vh;
+    background-image: linear-gradient(
+        rgb(var(--bg-overlay-color) / var(--bg-overlay-opacity-2)),
+        rgb(var(--bg-overlay-color) / var(--bg-overlay-opacity-2))
+    ), var(--custom-theme-background);
+}
+
+.custom-theme-background.theme-light .scrollbar-auto.scrollbar-themed::-webkit-scrollbar-thumb,
+.custom-theme-background.theme-light .scrollbar-thin.scrollbar-themed::-webkit-scrollbar-thumb {
+    background-size: 100vh;
+    background-image: rgb(var(--bg-overlay-color-inverse) / var(--bg-overlay-opacity-6)), rgb(var(--bg-overlay-color) / var(--bg-overlay-opacity-3));
+}
+
+.scrollbar-fade::-webkit-scrollbar-thumb,
+.scrollbar-fade::-webkit-scrollbar-track {
+    visibility: hidden;
+}
+
+.scrollbar-fade:hover::-webkit-scrollbar-thumb,
+.scrollbar-fade:hover::-webkit-scrollbar-track {
+    visibility: visible;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+.no-webkit-scrollbar .scrollbar-auto {
+    scrollbar-width: auto;
+    scrollbar-color: var(--scrollbar-auto-scrollbar-color-thumb) var(--scrollbar-auto-scrollbar-color-track);
+}
+
+.no-webkit-scrollbar .scrollbar-auto.scrollbar-fade:hover {
+    scrollbar-color: var(--scrollbar-auto-scrollbar-color-thumb) var(--scrollbar-auto-scrollbar-color-track);
+}
+
+.no-webkit-scrollbar .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar-thin-thumb) var(--scrollbar-thin-track);
+}
+
+.no-webkit-scrollbar .scrollbar-thin.scrollbar-fade:hover {
+    scrollbar-color: var(--scrollbar-thin-thumb) var(--scrollbar-thin-track);
+}
+
+.no-webkit-scrollbar .scrollbar-fade {
+    scrollbar-color: transparent transparent;
+}
+
+.no-webkit-scrollbar .scrollbar-none {
+    scrollbar-width: none;
+}

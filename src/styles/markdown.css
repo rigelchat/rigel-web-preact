@@ -1,0 +1,127 @@
+.markup {
+    color: var(--text-normal);
+}
+
+.markup p {
+    font-size: 1em;
+    line-height: 22px;
+    white-space: break-spaces;
+    word-wrap: break-word;
+}
+
+.markup blockquote {
+    position: relative;
+    padding: 0 8px 0 16px;
+    color: var(--text-secondary);
+}
+
+.markup blockquote::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    min-width: 4px;
+    border-radius: 4px;
+    background-color: var(--spine-default);
+}
+
+.markup pre {
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding: 0;
+    font-family: var(--font-code);
+    font-size: .75em;
+    line-height: 1em;
+    margin-top: 6px;
+    max-width: 90%;
+    white-space: pre-wrap;
+    background-clip: border-box;
+}
+
+.markup pre code {
+    font-size: .875em;
+    line-height: 1.125em;
+    text-indent: 0;
+    white-space: pre-wrap;
+    background: var(--background-secondary);
+    border: 1px solid var(--background-tertiary);
+    display: block;
+    overflow-x: auto;
+    padding: .5em;
+    border-radius: 4px;
+    -webkit-text-size-adjust: none;
+    -moz-text-size-adjust: none;
+    text-size-adjust: none;
+    color: var(--text-normal);
+}
+
+.markup p code {
+    padding: 0 .2em;
+    margin: -0.2em 0;
+    border-radius: 4px;
+    font-size: 85%;
+    line-height: 1.125em;
+    text-indent: 0;
+    white-space: pre-wrap;
+    background: var(--background-secondary);
+    border: 1px solid var(--background-tertiary);
+}
+
+.markup :is(h1, h2, h3, h4, h5) {
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--header-primary);
+    line-height: 1.375em;
+    margin: 16px 0 4px;
+}
+
+.markup :is(h1, h2):first-child {
+    margin-top: 8px;
+}
+
+.markup :is(h3, h4, h5, h6):first-child {
+    margin-top: 4px;
+}
+
+.markup h1 {
+    font-size: 1.5em;
+    margin: 16px 0 8px;
+}
+
+.markup h2 {
+    font-size: 1.25em;
+    margin: 16px 0 8px;
+}
+
+.markup h3 {
+    font-size: 1em;
+    margin: 16px 0 8px;
+}
+
+.markup .timestamp {
+    background-color: var(--background-modifier-accent);
+    border-radius: 3px;
+    padding: 0 2px;
+}
+
+.markup a {
+    color: var(--text-link);
+    word-break: break-word;
+    text-decoration: var(--link-decoration);
+    cursor: pointer;
+}
+
+.markup a:hover {
+    text-decoration: underline;
+}
+
+.markup :is(ul, ol) {
+    margin: 4px 0 0 16px;
+    list-style-position: outside;
+}
+
+.markup li {
+    margin-bottom: 4px;
+}

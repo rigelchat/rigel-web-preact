@@ -1,0 +1,21 @@
+.guilds-sidebar {
+    flex: 0 0 72px;
+    width: 72px;
+    height: 100%;
+    padding: 12px 0;
+    background: var(--bg-overlay-app-frame, var(--background-tertiary));
+    user-select: none;
+    overflow-y: auto;
+}
+
+.guilds-sidebar::-webkit-scrollbar {
+    display: none;
+}
+
+.guilds-sidebar .separator {
+    width: 32px;
+    height: 2px;
+    border-radius: 1px;
+    margin: 0 auto 8px;
+    background-color: var(--background-modifier-accent);
+}

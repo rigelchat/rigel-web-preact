@@ -13,16 +13,16 @@
   [![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
 </div>
 
-## ⚡ Introduction
+## Introduction
 
 This repository contains the web interface for the Rigel platform. It connects to the `rigel-server` API. We chose **Preact** to ensure the client remains lightweight (3kb alternative to React) and **Vite** for instant development start times.
 
-## 🛠️ Prerequisites
+## Prerequisites
 
 * [Node.js](https://nodejs.org/) (v16 or higher)
 * npm or pnpm
 
-## 🚀 Getting Started
+## Getting Started
 
 ### 1. Clone the repository
 
@@ -56,7 +56,7 @@ npm run dev
 ```
 The client will be available at `http://localhost:5173`.
 
-## 📦 Building for Production
+## Building for Production
 
 To create an optimized production build:
 

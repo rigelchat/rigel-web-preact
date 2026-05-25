@@ -1,0 +1,22 @@
+.inputLabel {
+    font-size: 12px;
+    line-height: 16px;
+	font-weight: 700;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+	margin-bottom: 8px;
+	color: var(--header-secondary);
+}
+
+.inputLabel.error {
+	color: var(--status-danger);
+}
+
+.inputLabel .required {
+    padding-left: 4px;
+	color: var(--status-danger);
+}
+
+.inputLabel .errorMessage {
+    font-style: italic;
+}

@@ -1,0 +1,191 @@
+.modal-layer {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    min-height: 0;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1002;
+}
+
+.dialog {
+    display: flex;
+    flex-direction: column;
+    width: 440px;
+    max-height: 720px;
+    min-height: 200px;
+    background-color: var(--modal-background);
+    box-shadow: var(--legacy-elevation-border), var(--legacy-elevation-high);
+    border-radius: 4px;
+    animation: modal-appear-bounce 0.3s ease-out forwards;
+}
+
+.dialog .dialog-header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 24px 24px 0px;
+    border-radius: 4px 4px 0 0;
+    word-wrap: break-word;
+    transition: box-shadow 0.1s ease-out;
+}
+
+.dialog .dialog-header h1 {
+    font-size: 24px;
+    line-height: 1.25;
+    font-weight: 700;
+    text-align: center;
+    color: var(--text-normal);
+}
+
+.dialog .dialog-header p {
+    margin-top: 8px;
+    font-size: 16px;
+    line-height: 1.25;
+    font-weight: 400;
+    text-align: center;
+    color: var(--header-secondary);
+}
+
+.dialog .dialog-header .close-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    height: 26px;
+    padding: 4px;
+    color: var(--interactive-normal);
+    background: none;
+    outline: none;
+    cursor: pointer;
+    border: none;
+    opacity: 0.5;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.dialog .dialog-header .close-btn:hover {
+    color: var(--interactive-hover);
+    opacity: 1;
+}
+
+.dialog .dialog-header .close-btn svg {
+    width: 24px;
+    height: 24px;
+}
+
+.dialog .dialog-content {
+    margin: 16px 0px;
+    padding-left: 12px;
+    padding-right: 4px;
+    overflow: hidden scroll;
+}
+
+.dialog .dialog-content .upload-icon-wrapper {
+    display: flex;
+    justify-content: center;
+    padding-top: 4px;
+    color: var(--interactive-normal);
+}
+
+.dialog .dialog-content .upload-icon-wrapper .upload-icon {
+    filter: saturate(var(--saturation-factor,1));
+    height: 80px;
+    position: relative;
+    width: 80px;
+}
+
+.dialog .dialog-content .upload-icon-wrapper .upload-icon input[type="file"] {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    font-size: 0px;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.dialog .dialog-content .upload-icon-wrapper .filled-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: var(--background-secondary-alt);
+}
+
+.dialog .dialog-content form {
+    margin-top: 24px;
+}
+
+.dialog .dialog-content form label {
+    display: block;
+    font-size: 12px;
+    line-height: 1.3333333333333333;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--header-secondary);
+    margin-bottom: 8px;
+}
+
+.dialog .dialog-content form input[type="text"] {
+    font-size: 16px;
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: 3px;
+    color: var(--text-normal);
+    background-color: var(--input-background);
+    border: none;
+        padding: 10px;
+    height: 40px;
+    transition: border-color.2s ease-in-out;
+}
+
+.dialog .dialog-content form .guild-lines {
+    font-size: 12px;
+    line-height: 1.3333333333333333;
+    font-weight: 400;
+    margin-top: 8px;
+    padding-bottom: 4px;
+    color: var(--text-muted);
+}
+
+.dialog .dialog-content .error {
+    font-size: 12px;
+    line-height: 1.3333333333333333;
+    font-weight: 400;
+    color: var(--text-danger);
+}
+
+.dialog .dialog-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 12px;
+    background-color: var(--modal-footer-background);
+    border-radius: 0 0 5px 5px;
+    box-shadow: inset 0 1px 0 hsl(var(--primary-630-hsl) / 0.6);
+}
+
+@keyframes modal-appear-bounce {
+    0% {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+
+    80% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

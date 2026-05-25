@@ -1,0 +1,138 @@
+.sidebar-wrapper .sidebar .panel {
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+    height: 53px;
+    padding: 0 8px 1px;
+    z-index: 2;
+}
+
+.theme-dark .sidebar-wrapper .sidebar .panel {
+    background: var(--bg-overlay-1, var(--background-secondary-alt));
+}
+
+.theme-light .sidebar-wrapper .sidebar .panel {
+    background: var(--bg-overlay-3, var(--background-secondary-alt));
+}
+
+.sidebar-wrapper .sidebar .panel .avatar-wrapper {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    margin-left: -2px;
+    margin-right: 8px;
+    padding-left: 2px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.sidebar-wrapper .sidebar .panel .avatar-wrapper:hover {
+    color: var(--interactive-hover);
+    background-color: var(--background-modifier-selected);
+}
+
+.sidebar-wrapper .sidebar .panel .avatar-wrapper .avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+.sidebar-wrapper .sidebar .panel .avatar-wrapper .names-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 4px 0 4px 8px;
+    margin-right: 8px;
+    min-width: 0;
+    user-select: text;
+}
+
+.sidebar-wrapper .sidebar .panel .avatar-wrapper .names-container .username {
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 600;
+    color: var(--header-primary);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.sidebar-wrapper .sidebar .panel .avatar-wrapper .names-container .hover-roll {
+    position: relative;
+    font-size: 12px;
+    line-height: 13px;
+    color: var(--header-secondary);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.sidebar-wrapper .sidebar .panel .avatar-wrapper .names-container .hover-roll .default,
+.sidebar-wrapper .sidebar .panel .avatar-wrapper .names-container .hover-roll .hovered {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    transform-style: preserve-3d;
+    transition: all 0.2s ease;
+}
+
+.sidebar-wrapper .sidebar .panel .avatar-wrapper .names-container .hover-roll .hovered {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    transform: translate3d(0, 107%, 0);
+}
+
+.sidebar-wrapper .sidebar .panel:hover .avatar-wrapper .names-container .hover-roll .default {
+    transform: translate3d(0, -107%, 0);
+    opacity: 0;
+}
+
+.sidebar-wrapper .sidebar .panel:hover .avatar-wrapper .names-container .hover-roll .hovered {
+    transform: translatez(0);
+    opacity: 1;
+}
+
+.sidebar-wrapper .sidebar .panel .avatar-wrapper .names-container .hover-roll .default .emoji {
+    width: 14px;
+    height: 14px;
+    margin-right: 4px;
+}
+
+.sidebar-wrapper .sidebar .panel button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    margin-left: auto;
+    color: var(--interactive-normal);
+}
+
+.sidebar-wrapper .sidebar .panel button:hover {
+    color: var(--interactive-hover);
+    background-color: var(--background-modifier-selected);
+}
+
+.sidebar-wrapper .sidebar .panel button svg {
+    width: 20px;
+    height: 20px;
+}
+
+.sidebar-wrapper .sidebar .panel button.btn-user-settings:hover svg {
+    animation: discord_sidebar_gearSpin 1.2s cubic-bezier(0.5, 0.1, 0, 1);
+}
+
+@keyframes discord_sidebar_gearSpin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(180deg); }
+}

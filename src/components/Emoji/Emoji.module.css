@@ -1,0 +1,11 @@
+.emoji {
+    display: inline-block;
+    width: 1.375em;
+    height: 1.375em;
+    vertical-align: middle;
+}
+
+.emoji.jumboable {
+    width: 3rem;
+    height: 3rem;
+}

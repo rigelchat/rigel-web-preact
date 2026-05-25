@@ -1,0 +1,47 @@
+.expressionPicker {
+    position: fixed;
+    background-color: var(--background-secondary);
+    border-radius: 8px;
+    box-shadow: var(--elevation-stroke),var(--elevation-high);
+    display: grid;
+    flex: 1 1 auto;
+    grid-template-rows: 48px 1fr;
+    width: 498px;
+    height: 498px;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.expressionPicker .nav {
+    display: flex;
+    gap: 8px;
+    padding: 16px 16px 8px;
+}
+
+.expressionPicker .nav .item {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    color: var(--interactive-normal);
+    cursor: pointer;
+    background: none;
+    border: none;
+    transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+}
+
+.expressionPicker .nav .item:hover {
+    color: var(--interactive-hover);
+    background-color: var(--background-modifier-hover);
+}
+
+.expressionPicker .nav .item:active {
+    color: var(--interactive-active);
+    background-color: var(--background-modifier-selected);
+}
+
+.expressionPicker .nav .item.active {
+    color: var(--white-500);
+    background-color: var(--background-accent);
+}

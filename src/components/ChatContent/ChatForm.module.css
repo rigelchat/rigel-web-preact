@@ -1,0 +1,363 @@
+.chatForm {
+    position: relative;
+    padding: 0 16px;
+}
+
+:global(.is-mobile) .chatForm {
+    padding: 0;
+    margin-top: 0;
+}
+
+.chatTextArea {
+    display: flex;
+    margin-bottom: 24px;
+    max-height: 50vh;
+    border-radius: 8px;
+    background: var(--bg-overlay-3, var(--channeltextarea-background));
+    overflow: hidden scroll;
+}
+
+.chatTextArea.disabled {
+    opacity: 0.5;
+}
+
+:global(.is-mobile) .chatTextArea {
+    align-items: center;
+    gap: 7px;
+    margin-bottom: 0;
+    padding: 7px 12px;
+    border-radius: 0;
+}
+
+.chatTextArea::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+:global(.is-mobile) .chatTextArea::-webkit-scrollbar {
+    display: none;
+}
+
+.chatTextArea::-webkit-scrollbar-track {
+    background-clip: padding-box;
+    border: 4px solid transparent;
+}
+
+.chatTextArea::-webkit-scrollbar-thumb {
+    background-clip: padding-box;
+    border: 4px solid transparent;
+    background-color: hsl(var(--primary-800-hsl) / 0.6);
+    border-radius: 8px;
+}
+
+.attachBtn {
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 44px;
+    padding: 10px 16px;
+    border: none;
+    background: none;
+    color: var(--interactive-normal);
+    cursor: pointer;
+}
+
+:global(.is-mobile) .attachBtn {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border-radius: 20px;
+}
+
+.attachBtn:hover {
+    color: var(--interactive-hover);
+}
+
+.attachBtn svg {
+    width: 24px;
+    height: 24px;
+}
+
+:global(.is-mobile) .attachBtn svg {
+    width: 20px;
+    height: 20px;
+}
+
+.buttons button {
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 4px;
+    margin-left: 4px;
+    margin-right: 4px;
+    color: var(--interactive-normal);
+}
+
+.buttons button:hover,
+.buttons button.active {
+    color: var(--interactive-hover);
+}
+
+.buttons button:active {
+    color: var(--interactive-active);
+}
+
+.buttons button [fill][fill-opacity] {
+    fill: currentColor;
+}
+
+.buttons button .icon {
+    width: 24px;
+    height: 24px;
+}
+
+.stickerBtn svg,
+.gifBtn svg {
+    transform-origin: 50% 100%;
+}
+
+.stickerBtn:hover svg,
+.gifBtn:hover svg {
+    animation: lottie-icon-wiggle 0.7s ease-in-out;
+}
+
+.emojiBtn {
+    filter: grayscale(1);
+    transition: filter 0.1s ease-out;
+}
+
+.emojiBtn:hover,
+.emojiBtn.active {
+    filter: none;
+}
+
+.emojiBtn .emoji {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    font-size: 24px;
+    line-height: 1;
+    transition: transform 0.1s ease-out;
+}
+
+.emojiBtn:hover .emoji {
+    transform: scale(1.14);
+}
+
+.buttons {
+    position: sticky;
+    display: flex;
+    flex-direction: row;
+    height: 44px;
+    top: 0;
+    margin-right: 6px;
+}
+
+:global(.has-webkit-scrollbar) .buttons {
+    margin-right: -6px;
+}
+
+.sendBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    margin-left: 12px;
+    margin-right: 4px;
+    outline: none;
+    border: none;
+    background: none;
+    color: var(--text-brand);
+    transition: all 0.15s ease-in;
+}
+
+:global(.is-mobile) .sendBtn {
+    width: 40px;
+    height: 40px;
+    margin-left: 0;
+    margin-right: 0;
+    border-radius: 20px;
+    color: var(--white);
+    background-color: var(--brand-500);
+}
+
+.sendBtn:not([disabled]):hover {
+    color: var(--interactive-active);
+}
+
+.sendBtn:not([disabled]):active {
+    color: var(--brand-500);
+}
+
+:global(.is-mobile) .sendBtn:not([disabled]):hover {
+    color: var(--white);
+    background-color: var(--brand-400);
+}
+
+.sendBtn[disabled] {
+    color: var(--interactive-muted);
+    pointer-events: none;
+}
+
+.sendBtn svg {
+    width: 20px;
+    height: 20px;
+}
+
+.separator {
+    width: 1px;
+    height: 28px;
+    margin-left: 8px;
+    align-self: center;
+    background-color: var(--background-modifier-accent);
+}
+
+:global(.is-mobile) .separator {
+    display: none;
+}
+
+.chatTextArea textarea {
+    font-family: inherit;
+    font-size: 16px;
+    line-height: 22px;
+    flex: 1;
+    min-height: 44px;
+    padding: 11px 10px 11px 0;
+    background: none;
+    resize: none;
+    border: none;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    color: var(--text-normal);
+}
+
+.chatTextArea.sansAttachBtn textarea {
+    padding-left: 15px;
+}
+
+:global(.theme-light) .chatTextArea textarea {
+    font-weight: 500;
+}
+
+:global(.is-mobile) .chatTextArea textarea {
+    min-height: 40px;
+    padding: 9px 13px;
+    border-radius: 20px;
+}
+
+.chatTextArea textarea::-webkit-input-placeholder {
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.chatTextArea textarea::-moz-placeholder {
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+:global(.is-mobile.theme-dark) .attachBtn,
+:global(.is-mobile.theme-dark) .sendBtn[disabled],
+:global(.is-mobile.theme-dark) .chatTextArea textarea {
+    background-color: rgba(255, 255, 255, 0.07);
+}
+
+:global(.is-mobile.theme-light) .attachBtn,
+:global(.is-mobile.theme-light) .sendBtn[disabled],
+:global(.is-mobile.theme-light) .chatTextArea textarea {
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.error {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    margin-bottom: 8px;
+    background-color: var(--status-danger);
+    color: var(--white);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.error:hover {
+    opacity: 0.9;
+}
+
+@keyframes lottie-icon-wiggle {
+    0%   { transform: rotate(0deg); }
+    20%  { transform: rotate(5deg); }
+    40%  { transform: rotate(5deg); }
+    60%  { transform: rotate(-5deg); }
+    80%  { transform: rotate(-5deg); }
+    100% { transform: rotate(0deg); }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.typingIndicator {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 20px; /* Taille fixe pour éviter que le chat "saute" quand quelqu'un tape */
+    font-size: 12px;
+    color: var(--text-normal);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-left: 52px; /* Aligné avec le texte du textarea (après le bouton +) */
+    margin-top: 2px;
+    pointer-events: none; /* Ne bloque pas les clics */
+}
+
+.typingText {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Animation des petits points (style Discord) */
+.typingDots {
+    display: flex;
+    gap: 2px;
+}
+
+.typingDots span {
+    width: 3.5px;
+    height: 3.5px;
+    background-color: var(--text-normal);
+    border-radius: 50%;
+    animation: typingAnimation 1.4s infinite;
+}
+
+.typingDots span:nth-child(2) { animation-delay: 0.2s; }
+.typingDots span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes typingAnimation {
+    0%, 80%, 100% { opacity: 0.2; }
+    40% { opacity: 1; }
+}

@@ -1,0 +1,32 @@
+.channelMembers {
+    width: 240px;
+    padding: 0 0 20px;
+    overflow-y: scroll;
+    background: var(--bg-overlay-chat, var(--custom-channel-members-bg));
+}
+
+.channelMembers :global(.is-mobile) {
+    width: 100%;
+    grid-area: chat-content-and-channel-members;
+}
+
+.membersGroup {
+    padding: 24px 8px 0 16px;
+    height: 40px;
+    flex: 1 1 auto;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.3px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: var(--channels-default);
+}
+
+.roleIcon {
+    width: 14px;
+    height: 14px;
+    margin-right: 4px;
+    vertical-align: top;
+}

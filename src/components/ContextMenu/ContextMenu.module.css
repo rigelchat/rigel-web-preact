@@ -1,0 +1,101 @@
+.contextMenu {
+    position: fixed;
+    padding: 6px 0 6px 8px;
+    min-width: 188px;
+    max-width: 320px;
+    max-height: calc(100vh - 32px);
+    border-radius: 4px;
+    background: var(--background-floating);
+    box-shadow: var(--shadow-high);
+    overflow-y: scroll;
+    z-index: 1000;
+}
+
+:global(.no-webkit-scrollbar) .contextMenu {
+    padding-right: 8px;
+}
+
+:global(.custom-theme-background) .contextMenu {
+    border: 1px solid var(--border-strong);
+}
+
+.contextMenu .item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2px 0;
+    padding: 6px 8px;
+    min-height: 32px;
+    border-radius: 2px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+    cursor: pointer;
+    color: var(--interactive-normal);
+}
+
+.contextMenu .item:hover,
+.contextMenu .item.hovering {
+    background-color: var(--menu-item-default-hover-bg);
+    color: var(--white);
+}
+
+.contextMenu .item:active {
+    background-color: var(--menu-item-default-active-bg);
+    color: var(--white);
+}
+
+.contextMenu .item.danger {
+    color: var(--status-danger);
+}
+
+.contextMenu .item.danger:hover,
+.contextMenu .item.danger.hovering {
+    background-color: var(--menu-item-danger-hover-bg);
+    color: var(--white);
+}
+
+.contextMenu .item.danger:active {
+    background-color: var(--menu-item-danger-active-bg);
+    color: var(--white);
+}
+
+.contextMenu .item.disabled {
+    cursor: pointer;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.contextMenu .item .label {
+    flex: 1 1 auto;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.contextMenu .item .subtext {
+    font-size: 12px;
+    line-height: 1.3;
+    font-weight: 400;
+    color: var(--text-muted);
+    margin-top: 2px;
+    white-space: normal;
+}
+
+.contextMenu .item .icon {
+    width: 18px;
+    height: 18px;
+    margin-left: 8px;
+    flex: 0 0 auto;
+}
+
+.contextMenu .item .icon.caret {
+    width: 16px;
+    height: 16px;
+    color: var(--text-muted);
+}
+
+.contextMenu .separator {
+    margin: 4px;
+    border-bottom: 1px solid var(--background-modifier-accent);
+}

@@ -1,0 +1,135 @@
+.guild-discovery-view .guilds .card {
+    width: 100%;
+    height: 320px;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    transition:
+        background-color 0.2s ease-out,
+        border-radius 0.2s ease-out,
+        box-shadow 0.2s ease-out,
+        transform 0.2s ease-out;
+}
+
+.theme-dark .guild-discovery-view .guilds .card,
+.theme-dark .guild-discovery-view .guilds .card .icon {
+    background-color: var(--background-secondary-alt);
+}
+
+.theme-light .guild-discovery-view .guilds .card,
+.theme-light .guild-discovery-view .guilds .card .icon {
+    background-color: var(--background-secondary);
+}
+
+.theme-light .guild-discovery-view .guilds .card {
+    box-shadow: var(--legacy-elevation-border), var(--elevation-medium);
+}
+
+.guild-discovery-view .guilds .card:hover {
+    background-color: var(--background-tertiary);
+    box-shadow: var(--elevation-high);
+    transform: translateY(-1px);
+}
+
+.guild-discovery-view .guilds .card .header {
+    position: relative;
+    height: 146px;
+}
+
+.guild-discovery-view .guilds .card .header .splash {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.guild-discovery-view .guilds .card .header .icon {
+    position: absolute;
+    bottom: -26px;
+    left: 16px;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 11px;
+    transition: background-color 0.2s ease-out;
+}
+
+.guild-discovery-view .guilds .card:hover .header .icon {
+    background-color: var(--background-tertiary);
+}
+
+.guild-discovery-view .guilds .card .details {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    padding: 40px 16px 16px;
+}
+
+.guild-discovery-view .guilds .card .details .title {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.guild-discovery-view .guilds .card .details .title .flower-star-container {
+    width: 16px;
+    height: 16px;
+}
+
+.guild-discovery-view .guilds .card .details .title .flower-star-container .symbol-container svg {
+    width: 100%;
+    height: 100%;
+}
+
+.guild-discovery-view .guilds .card .details .title h2 {
+    font-size: 16px;
+    line-height: 1.25;
+    font-weight: 600;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: var(--text-normal);
+}
+
+.guild-discovery-view .guilds .card .details .description {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    margin: 4px 0 16px;
+    font-size: 14px;
+    line-height: 1.3;
+    font-weight: 400;
+    color: var(--header-secondary);
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.guild-discovery-view .guilds .card .details .members {
+    display: flex;
+    gap: 16px;
+    flex: 0 0 auto;
+}
+
+.guild-discovery-view .guilds .card .details .members .count {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    line-height: 16px;
+    color: var(--header-secondary);
+}
+
+.guild-discovery-view .guilds .card .details .members .count .dot {
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    margin-right: 4px;
+    background-color: var(--primary-300);
+}
+
+.guild-discovery-view .guilds .card .details .members .count .dot.online {
+    background-color: var(--green-360);
+}
