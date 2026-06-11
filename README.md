@@ -5,15 +5,14 @@
 
   A web interface for the Rigel platform, built with Preact and Vite.
 
-  [![Rigel](https://img.shields.io/badge/Rigel-Join_Public_Instance-brightgreen?style=for-the-badge&logo=rocket&logoColor=white)](https://rigel.chat/invite/rigel?instance=https%3A%2F%2Frigel.chat)
-  [![License](https://img.shields.io/badge/License-AGPLv3-blue.svg?style=for-the-badge)](LICENSE)
   [![Preact](https://img.shields.io/badge/Preact-673AB8?style=for-the-badge&logo=preact&logoColor=white)](https://preactjs.com)
   [![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev)
+  [![License](https://img.shields.io/badge/License-AGPLv3-blue.svg?style=for-the-badge)](LICENSE)
 </div>
 
 ## Introduction
 
-This repository contains the web interface for the Rigel platform, which connects to the [rigel-server](https://github.com/rigelchat/rigel-server-rs) API.
+This repository contains the web interface for the Rigel, which connects to the [rigel-server-rs](https://github.com/rigelchat/rigel-server-rs) API.
 It uses **Preact** to maintain a small bundle size and **Vite** for the build pipeline.
 
 ## Prerequisites
@@ -46,7 +45,7 @@ Copy the example environment file and configure the target host and port:
 cp .env.example .env
 ```
 
-*Edit `.env` to set your `PORT` and `VITE_HOST`.*
+*Edit `.env` to set your own `PORT` and `VITE_HOST`.*
 
 ### 4. Run Development Server
 
